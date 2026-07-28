@@ -11,6 +11,8 @@ encoder → connector & token reduction → LLM-side vision tokens.
 This list accompanies our survey (link and citation to be added on publication).
 Contributions welcome — see [Contributing](#contributing).
 
+<img width="5049" height="1639" alt="EfficientVideoLLM_evolution" src="https://github.com/user-attachments/assets/579de1c4-582b-4cbf-be19-a43339a2aa8f" />
+
 ## Contents
 
 - [1. Frame Sampling](#1-frame-sampling)
