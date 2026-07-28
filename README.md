@@ -1,4 +1,8 @@
-# Awesome Efficient Video LLMs [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# Awesome Efficient Video LLMs
+
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+[![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/momentslab/awesome-efficient-videollm/graphs/commit-activity)
 
 A curated list of efficiency mechanisms for video large language models (VideoLLMs),
 organized by **where in the pipeline the mechanism acts**: frame sampling → vision
