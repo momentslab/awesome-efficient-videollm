@@ -43,75 +43,75 @@ Contributions welcome — see [Contributing](#contributing).
 
 ### Fixed coverage sampling
 
-| Abbr. | Title | Year | Venue | Paper | Code |
+| Abbreviation | Title | Year | Venue | Paper | Code |
 | --- | --- | :-: | :-: | :-: | :-: |
 | **TSN** | Temporal Segment Networks: Towards Good Practices for Deep Action Recognition | 2016 | arXiv | [paper](https://arxiv.org/abs/1608.00859) | [code](https://github.com/yjxiong/temporal-segment-networks) |
 
 ### Training-free visual summarization
 
-| Abbr. | Title | Year | Venue | Paper | Code |
+| Abbreviation | Title | Year | Venue | Paper | Code |
 | --- | --- | :-: | :-: | :-: | :-: |
 | **KTS** | Category-Specific Video Summarization | 2014 | ECCV 2014 | [paper](https://doi.org/10.1007/978-3-319-10599-4_35) | — |
 | **KTS-Adaptive** | Revisiting Kernel Temporal Segmentation as an Adaptive Tokenizer for Long-form Video Understanding | 2023 | arXiv | [paper](https://arxiv.org/abs/2309.11569v1) | — |
 | **F2C** | From Frames to Clips: Training-free Adaptive Key Clip Selection for Long-Form Video Understanding | 2025 | arXiv | [paper](https://arxiv.org/abs/2510.02262) | — |
-| **MaxInfo** | MaxInfo: A Training-Free Key-Frame Selection Method Using Maximum Volume for Enhanced Video Understanding | 2025 | arXiv | [paper](https://arxiv.org/abs/2502.03183) | — |
+| **MaxInfo** | MaxInfo: A Training-Free Key-Frame Selection Method Using Maximum Volume for Enhanced Video Understanding | 2025 | arXiv | [paper](https://arxiv.org/abs/2502.03183) | [code](https://github.com/FusionBrainLab/MaxInfo) |
 
 ### Learned video-only selection
 
-| Abbr. | Title | Year | Venue | Paper | Code |
+| Abbreviation | Title | Year | Venue | Paper | Code |
 | --- | --- | :-: | :-: | :-: | :-: |
 | **AdaFrame** | AdaFrame: Adaptive Frame Selection for Fast Video Recognition | 2018 | arXiv | [paper](https://arxiv.org/abs/1811.12432v2) | — |
 | **MGSampler** | MGSampler: An Explainable Sampling Strategy for Video Action Recognition | 2021 | arXiv | [paper](https://arxiv.org/abs/2104.09952) | [code](https://github.com/MCG-NJU/MGSampler) |
-| **PEEK** | PEEK: Picking Essential frames via Efficient Knowledge distillation | 2026 | arXiv | [paper](https://arxiv.org/abs/2605.31029) | — |
+| **PEEK** | PEEK: Picking Essential frames via Efficient Knowledge distillation | 2026 | arXiv | [paper](https://arxiv.org/abs/2605.31029) | [code](https://github.com/momentslab/peek) & [weights](https://huggingface.co/momentslab/peek) |
 
 ### Training-free relevance / diversity
 
-| Abbr. | Title | Year | Venue | Paper | Code |
+| Abbreviation | Title | Year | Venue | Paper | Code |
 | --- | --- | :-: | :-: | :-: | :-: |
-| **AKS** | Adaptive Keyframe Sampling for Long Video Understanding | 2025 | arXiv | [paper](https://arxiv.org/abs/2502.21271) | [code](https://github.com/ncTimTang/AKS) |
-| **AdaRD-Key** | AdaRD-key: Adaptive Relevance-Diversity Keyframe Sampling for Long-form Video Understanding | 2025 | arXiv | [paper](https://arxiv.org/abs/2510.02778) | — |
+| **AKS** | Adaptive Keyframe Sampling for Long Video Understanding | 2025 | CVPR 2025 | [paper](https://arxiv.org/abs/2502.21271) | [code](https://github.com/ncTimTang/AKS) |
+| **AdaRD-Key** | AdaRD-key: Adaptive Relevance-Diversity Keyframe Sampling for Long-form Video Understanding | 2025 | arXiv | [paper](https://arxiv.org/abs/2510.02778) | [code](https://github.com/Xian867/AdaRD-Key) |
 | **DyToK** | Less Is More, but Where? Dynamic Token Compression via LLM-Guided Keyframe Prior | 2025 | NeurIPS 2025 | [paper](https://arxiv.org/abs/2512.06866) | [code](https://github.com/yu-lin-li/DyToK) |
-| **FOCUS** | FOCUS: Efficient Keyframe Selection for Long Video Understanding | 2025 | arXiv | [paper](https://arxiv.org/abs/2510.27280) | [code](https://github.com/NUS-HPC-AI-Lab/FOCUS) |
-| **Q-Frame** | Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs | 2025 | arXiv | [paper](https://arxiv.org/abs/2506.22139) | [code](https://github.com/xiaomi-research/q-frame) |
-| **LDDR** | LDDR: Linear-DPP-Based Dynamic-Resolution Frame Sampling for Video MLLMs | 2026 | arXiv | [paper](https://arxiv.org/abs/2605.11477) | — |
+| **FOCUS** | FOCUS: Efficient Keyframe Selection for Long Video Understanding | 2025 | ICLR 2026 | [paper](https://arxiv.org/abs/2510.27280) | [code](https://github.com/NUS-HPC-AI-Lab/FOCUS) |
+| **Q-Frame** | Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs | 2025 | ICCV 2025 | [paper](https://arxiv.org/abs/2506.22139) | [code](https://github.com/xiaomi-research/q-frame) |
+| **LDDR** | LDDR: Linear-DPP-Based Dynamic-Resolution Frame Sampling for Video MLLMs | 2026 | arXiv | [paper](https://arxiv.org/abs/2605.11477) | [code](https://github.com/JingfengChen-Jay/LDDR) |
 
 ### Learned / generative query-conditioned
 
-| Abbr. | Title | Year | Venue | Paper | Code |
+| Abbreviaton | Title | Year | Venue | Paper | Code |
 | --- | --- | :-: | :-: | :-: | :-: |
-| **Frame-Voyager** | Frame-Voyager: Learning to Query Frames for Video Large Language Models | 2025 | arXiv | [paper](https://arxiv.org/abs/2410.03226) | — |
-| **GenS** | Generative Frame Sampler for Long Video Understanding | 2025 | arXiv | [paper](https://arxiv.org/abs/2503.09146) | [code](https://github.com/yaolinli/GenS) |
+| **Frame-Voyager** | Frame-Voyager: Learning to Query Frames for Video Large Language Models | 2025 | ICLR 2025 | [paper](https://arxiv.org/abs/2410.03226) | — |
+| **GenS** | Generative Frame Sampler for Long Video Understanding | 2025 | ACL 2025 Findings | [paper](https://arxiv.org/abs/2503.09146) | [code](https://github.com/yaolinli/GenS) & [weights](https://huggingface.co/yaolily/GenS) |
 | **HFS** | HFS: Holistic Query-Aware Frame Selection for Efficient Video Reasoning | 2025 | arXiv | [paper](https://arxiv.org/abs/2512.11534) | — |
-| **RL-FrameSel** | Efficient Frame Selection for Long Video Understanding via Reinforcement Learning | 2026 | CVPR 2026 | — | — |
+| **RL-FrameSel** | Efficient Frame Selection for Long Video Understanding via Reinforcement Learning | 2026 | CVPR 2026 | [paper](https://openaccess.thecvf.com/content/CVPR2026/html/Qin_Efficient_Frame_Selection_for_Long_Video_Understanding_via_Reinforcement_Learning_CVPR_2026_paper.html) | — |
 
 
 ## 2. Vision Encoder
 
 ### Shared / unified multimodal encoders
 
-| Abbr. | Title | Year | Venue | Paper | Code |
+| Abbreviation | Title | Year | Venue | Paper | Code |
 | --- | --- | :-: | :-: | :-: | :-: |
-| **MMV (TSM)** | Self-Supervised MultiModal Versatile Networks | 2020 | arXiv | [paper](https://arxiv.org/abs/2006.16228) | [code](https://github.com/google-deepmind/deepmind-research/tree/master/mmv) |
-| **VATT** | VATT: Transformers for Multimodal Self-Supervised Learning from Raw Video, Audio and Text | 2021 | arXiv | [paper](https://arxiv.org/abs/2104.11178) | [code](https://github.com/google-research/google-research/tree/master/vatt) |
-| **Meta-Transformer** | Meta-Transformer: A Unified Framework for Multimodal Learning | 2023 | arXiv | [paper](https://arxiv.org/abs/2307.10802) | [code](https://github.com/invictus717/Meta-Transformer) |
+| **MMV (TSM)** | Self-Supervised MultiModal Versatile Networks | 2020 | NeurIPS 2020 | [paper](https://arxiv.org/abs/2006.16228) | [code](https://github.com/google-deepmind/deepmind-research/tree/master/mmv) & [weights](https://github.com/google-deepmind/deepmind-research/tree/master/mmv#checkpoints) |
+| **VATT** | VATT: Transformers for Multimodal Self-Supervised Learning from Raw Video, Audio and Text | 2021 | NeurIPS 2021 | [paper](https://arxiv.org/abs/2104.11178) | [code](https://github.com/google-research/google-research/tree/master/vatt) & [weights](https://github.com/google-deepmind/deepmind-research/tree/master/mmv#checkpoints) |
+| **Meta-Transformer** | Meta-Transformer: A Unified Framework for Multimodal Learning | 2023 | arXiv | [paper](https://arxiv.org/abs/2307.10802) | [code](https://github.com/invictus717/MetaTransformer) & [weights](https://huggingface.co/kxgong/Meta-Transformer) |
 
 ### Efficient spatiotemporal backbones
 
-| Abbr. | Title | Year | Venue | Paper | Code |
+| Abbreviation | Title | Year | Venue | Paper | Code |
 | --- | --- | :-: | :-: | :-: | :-: |
-| **TSM** | TSM: Temporal Shift Module for Efficient Video Understanding | 2019 | arXiv | [paper](https://arxiv.org/abs/1811.08383) | [code](https://github.com/mit-han-lab/temporal-shift-module) |
-| **X3D** | X3D: Expanding Architectures for Efficient Video Recognition | 2020 | CVPR 2020 | [paper](https://arxiv.org/abs/2004.04730) | [code](https://github.com/facebookresearch/SlowFast) |
-| **MViT** | Multiscale Vision Transformers | 2021 | arXiv | [paper](https://arxiv.org/abs/2104.11227) | [code](https://github.com/facebookresearch/mvit) |
+| **TSM** | TSM: Temporal Shift Module for Efficient Video Understanding | 2019 | ICCV 2019 | [paper](https://arxiv.org/abs/1811.08383) | [code](https://github.com/mit-han-lab/temporal-shift-module) & [weights](https://github.com/mit-han-lab/temporal-shift-module#pretrained-models) |
+| **X3D** | X3D: Expanding Architectures for Efficient Video Recognition | 2020 | CVPR 2020 | [paper](https://arxiv.org/abs/2004.04730) | [code](https://github.com/facebookresearch/SlowFast) & [weights](https://github.com/facebookresearch/SlowFast/blob/main/MODEL_ZOO.md) |
+| **MViT** | Multiscale Vision Transformers | 2021 | ICCV 2021 | [paper](https://arxiv.org/abs/2104.11227) | [code](https://github.com/facebookresearch/SlowFast) |
 | **MoViNet** | MoViNets: Mobile Video Networks for Efficient Video Recognition | 2021 | CVPR 2021 | [paper](https://arxiv.org/abs/2103.11511) | [code](https://github.com/tensorflow/models/tree/master/official/projects/movinet) |
-| **Video Swin** | Video Swin Transformer | 2021 | arXiv | [paper](https://arxiv.org/abs/2106.13230) | [code](https://github.com/SwinTransformer/Video-Swin-Transformer) |
-| **MViTv2** | MViTv2: Improved Multiscale Vision Transformers for Classification and Detection | 2022 | arXiv | [paper](https://arxiv.org/abs/2112.01526) | [code](https://github.com/facebookresearch/mvit) |
-| **UniFormer** | UniFormer: Unified Transformer for Efficient Spatiotemporal Representation Learning | 2022 | arXiv | [paper](https://arxiv.org/abs/2201.04676) | [code](https://github.com/Sense-X/UniFormer) |
-| **Hiera** | Hiera: A Hierarchical Vision Transformer without the Bells-and-Whistles | 2023 | ICML 2023 | [paper](https://arxiv.org/abs/2306.00989) | [code](https://github.com/facebookresearch/hiera) |
-| **UniFormerV2** | UniFormerV2: Spatiotemporal Learning by Arming Image ViTs with Video UniFormer | 2023 | ICCV 2023 | [paper](https://arxiv.org/abs/2211.09552) | [code](https://github.com/OpenGVLab/UniFormerV2) |
+| **Video Swin** | Video Swin Transformer | 2021 | arXiv | [paper](https://arxiv.org/abs/2106.13230) | [code](https://github.com/SwinTransformer/Video-Swin-Transformer) & [weights](https://github.com/SwinTransformer/Video-Swin-Transformer#results-and-models) |
+| **MViTv2** | MViTv2: Improved Multiscale Vision Transformers for Classification and Detection | 2022 | CVPR 2022 | [paper](https://arxiv.org/abs/2112.01526) | [code](https://github.com/facebookresearch/mvit) |
+| **UniFormer** | UniFormer: Unified Transformer for Efficient Spatiotemporal Representation Learning | 2022 | ICLR 2022 | [paper](https://arxiv.org/abs/2201.04676) | [code](https://github.com/Sense-X/UniFormer) & [weights](https://huggingface.co/Sense-X/uniformer_video) |
+| **Hiera** | Hiera: A Hierarchical Vision Transformer without the Bells-and-Whistles | 2023 | ICML 2023 | [paper](https://arxiv.org/abs/2306.00989) | [code](https://github.com/facebookresearch/hiera) & [weights](https://github.com/facebookresearch/hiera#model-zoo) |
+| **UniFormerV2** | UniFormerV2: Spatiotemporal Learning by Arming Image ViTs with Video UniFormer | 2023 | ICCV 2023 | [paper](https://arxiv.org/abs/2211.09552) | [code](https://github.com/OpenGVLab/UniFormerV2) & [weights](https://github.com/OpenGVLab/UniFormerV2/blob/main/MODEL_ZOO.md)|
 
 ### Linear-complexity / state-space
 
-| Abbr. | Title | Year | Venue | Paper | Code |
+| Abbreviation | Title | Year | Venue | Paper | Code |
 | --- | --- | :-: | :-: | :-: | :-: |
 | **VideoMamba** | VideoMamba: State Space Model for Efficient Video Understanding | 2024 | ECCV 2024 | [paper](https://arxiv.org/abs/2403.06977) | [code](https://github.com/OpenGVLab/VideoMamba) |
 | **VideoMamba-ST** | VideoMamba: Spatio-Temporal Selective State Space Model | 2024 | ECCV 2024 | [paper](https://arxiv.org/abs/2407.08476) | — |
@@ -119,7 +119,7 @@ Contributions welcome — see [Contributing](#contributing).
 
 ### Encoder-internal token reduction
 
-| Abbr. | Title | Year | Venue | Paper | Code |
+| Abbreviation | Title | Year | Venue | Paper | Code |
 | --- | --- | :-: | :-: | :-: | :-: |
 | **ToMe** | Token Merging: Your ViT but Faster | 2023 | ICLR 2023 | [paper](https://arxiv.org/abs/2210.09461) | [code](https://github.com/facebookresearch/ToMe) |
 | **ResidualViT** | ResidualViT for Efficient Temporally Dense Video Encoding | 2025 | ICCV 2025 | [paper](https://arxiv.org/abs/2509.13255) | [code](https://github.com/Soldelli/residualvit) |
@@ -128,13 +128,13 @@ Contributions welcome — see [Contributing](#contributing).
 
 ### Compressed-domain encoding
 
-| Abbr. | Title | Year | Venue | Paper | Code |
+| Abbreviation | Title | Year | Venue | Paper | Code |
 | --- | --- | :-: | :-: | :-: | :-: |
 | **CoPE-VideoLM** | CoPE-VideoLM: Leveraging Codec Primitives For Efficient Video Language Modeling | 2026 | arXiv | [paper](https://arxiv.org/abs/2602.13191) | — |
 
 ### Distilled / compact vision encoders
 
-| Abbr. | Title | Year | Venue | Paper | Code |
+| Abbreviation | Title | Year | Venue | Paper | Code |
 | --- | --- | :-: | :-: | :-: | :-: |
 | **TinyCLIP** | TinyCLIP: CLIP Distillation via Affinity Mimicking and Weight Inheritance | 2023 | ICCV 2023 | [paper](https://arxiv.org/abs/2309.12314) | [code](https://github.com/microsoft/Cream/tree/main/TinyCLIP) |
 | **MobileCLIP** | MobileCLIP: Fast Image-Text Models through Multi-Modal Reinforced Training | 2024 | CVPR 2024 | [paper](https://arxiv.org/abs/2311.17049) | [code](https://github.com/apple/ml-mobileclip) |
@@ -147,7 +147,7 @@ Contributions welcome — see [Contributing](#contributing).
 
 ### Training-free token pruning & merging
 
-| Abbr. | Title | Year | Venue | Paper | Code |
+| Abbreviation | Title | Year | Venue | Paper | Code |
 | --- | --- | :-: | :-: | :-: | :-: |
 | **Chat-UniVi** | Chat-UniVi: Unified Visual Representation Empowers Large Language Models with Image and Video Understanding | 2024 | arXiv | [paper](https://arxiv.org/abs/2311.08046) | [code](https://github.com/PKU-YuanGroup/Chat-UniVi) |
 | **LongVU** | LongVU: Spatiotemporal Adaptive Compression for Long Video-Language Understanding | 2024 | arXiv | [paper](https://arxiv.org/abs/2410.17434) | [code](https://github.com/Vision-CAIR/LongVU) |
@@ -160,7 +160,7 @@ Contributions welcome — see [Contributing](#contributing).
 
 ### Query- / budget-based resampling
 
-| Abbr. | Title | Year | Venue | Paper | Code |
+| Abbreviation | Title | Year | Venue | Paper | Code |
 | --- | --- | :-: | :-: | :-: | :-: |
 | **Perceiver Resampler (Flamingo)** | Flamingo: A Visual Language Model for Few-Shot Learning | 2022 | arXiv | [paper](https://arxiv.org/abs/2204.14198) | [code](https://github.com/mlfoundations/open_flamingo) |
 | **LLaMA-VID** | LLaMA-VID: An Image Is Worth 2 Tokens in Large Language Models | 2023 | arXiv | [paper](https://arxiv.org/abs/2311.17043) | [code](https://github.com/dvlab-research/LLaMA-VID) |
@@ -170,7 +170,7 @@ Contributions welcome — see [Contributing](#contributing).
 
 ### Spatiotemporal pooling & projection
 
-| Abbr. | Title | Year | Venue | Paper | Code |
+| Abbreviation | Title | Year | Venue | Paper | Code |
 | --- | --- | :-: | :-: | :-: | :-: |
 | **PLLaVA** | PLLaVA : Parameter-free LLaVA Extension from Images to Videos for Video Dense Captioning | 2024 | arXiv | [paper](https://arxiv.org/abs/2404.16994) | [code](https://github.com/magic-research/PLLaVA) |
 | **SF-LLaVA** | SlowFast-LLaVA: A Strong Training-Free Baseline for Video Large Language Models | 2024 | arXiv | [paper](https://arxiv.org/abs/2407.15841) | [code](https://github.com/apple/ml-slowfast-llava) |
@@ -180,7 +180,7 @@ Contributions welcome — see [Contributing](#contributing).
 
 ### Streaming / memory compression
 
-| Abbr. | Title | Year | Venue | Paper | Code |
+| Abbreviation | Title | Year | Venue | Paper | Code |
 | --- | --- | :-: | :-: | :-: | :-: |
 | **MA-LMM** | MA-LMM: Memory-Augmented Large Multimodal Model for Long-Term Video Understanding | 2024 | CVPR 2024 | [paper](https://arxiv.org/abs/2404.05726) | [code](https://github.com/boheumd/MA-LMM) |
 | **MovieChat** | MovieChat: From Dense Token to Sparse Memory for Long Video Understanding | 2024 | arXiv | [paper](https://arxiv.org/abs/2307.16449) | [code](https://github.com/rese1f/MovieChat) |
@@ -189,7 +189,7 @@ Contributions welcome — see [Contributing](#contributing).
 
 ### Audio & audio-visual token compression
 
-| Abbr. | Title | Year | Venue | Paper | Code |
+| Abbreviation | Title | Year | Venue | Paper | Code |
 | --- | --- | :-: | :-: | :-: | :-: |
 | **FAVOR** | Fine-Grained Audio-Visual Joint Representations for Multimodal Large Language Models | 2023 | arXiv | [paper](https://arxiv.org/abs/2310.05863) | [code](https://github.com/BriansIDP/AudioVisualLLM) |
 | **Baichuan-Omni** | Baichuan-Omni Technical Report | 2024 | arXiv | [paper](https://arxiv.org/abs/2410.08565) | [code](https://github.com/baichuan-inc/Baichuan-Omni-1.5) |
@@ -204,7 +204,7 @@ Contributions welcome — see [Contributing](#contributing).
 
 ### Decoder-layer token pruning & merging
 
-| Abbr. | Title | Year | Venue | Paper | Code |
+| Abbreviation | Title | Year | Venue | Paper | Code |
 | --- | --- | :-: | :-: | :-: | :-: |
 | **FastV** | An Image is Worth 1/2 Tokens After Layer 2: Plug-and-Play Inference Acceleration for Large Vision-Language Models | 2024 | ECCV 2024 | [paper](https://arxiv.org/abs/2403.06764) | [code](https://github.com/pkunlp-icler/FastV) |
 | **FrameFusion** | FrameFusion: Combining Similarity and Importance for Video Token Reduction on Large Vision Language Models | 2025 | ICCV 2025 | [paper](https://arxiv.org/abs/2501.01986) | [code](https://github.com/thu-nics/FrameFusion) |
@@ -214,7 +214,7 @@ Contributions welcome — see [Contributing](#contributing).
 
 ### Visual KV-cache compression
 
-| Abbr. | Title | Year | Venue | Paper | Code |
+| Abbreviation | Title | Year | Venue | Paper | Code |
 | --- | --- | :-: | :-: | :-: | :-: |
 | **DyCoke** | DyCoke: Dynamic Compression of Tokens for Fast Video Large Language Models | 2025 | CVPR 2025 | [paper](https://arxiv.org/abs/2411.15024) | [code](https://github.com/KD-TAO/DyCoke) |
 | **VidKV** | Plug-and-Play 1.x-Bit KV Cache Quantization for Video Large Language Models | 2025 | arXiv | [paper](https://arxiv.org/abs/2503.16257) | [code](https://github.com/KD-TAO/VidKV) |
