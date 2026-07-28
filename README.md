@@ -77,7 +77,7 @@ Contributions welcome — see [Contributing](#contributing).
 
 ### Learned / generative query-conditioned
 
-| Abbreviaton | Title | Year | Venue | Paper | Code |
+| Abbreviation | Title | Year | Venue | Paper | Code |
 | --- | --- | :-: | :-: | :-: | :-: |
 | **Frame-Voyager** | Frame-Voyager: Learning to Query Frames for Video Large Language Models | 2025 | ICLR 2025 | [paper](https://arxiv.org/abs/2410.03226) | — |
 | **GenS** | Generative Frame Sampler for Long Video Understanding | 2025 | ACL 2025 Findings | [paper](https://arxiv.org/abs/2503.09146) | [code](https://github.com/yaolinli/GenS) & [weights](https://huggingface.co/yaolily/GenS) |
@@ -92,7 +92,7 @@ Contributions welcome — see [Contributing](#contributing).
 | Abbreviation | Title | Year | Venue | Paper | Code |
 | --- | --- | :-: | :-: | :-: | :-: |
 | **MMV (TSM)** | Self-Supervised MultiModal Versatile Networks | 2020 | NeurIPS 2020 | [paper](https://arxiv.org/abs/2006.16228) | [code](https://github.com/google-deepmind/deepmind-research/tree/master/mmv) & [weights](https://github.com/google-deepmind/deepmind-research/tree/master/mmv#checkpoints) |
-| **VATT** | VATT: Transformers for Multimodal Self-Supervised Learning from Raw Video, Audio and Text | 2021 | NeurIPS 2021 | [paper](https://arxiv.org/abs/2104.11178) | [code](https://github.com/google-research/google-research/tree/master/vatt) & [weights](https://github.com/google-deepmind/deepmind-research/tree/master/mmv#checkpoints) |
+| **VATT** | VATT: Transformers for Multimodal Self-Supervised Learning from Raw Video, Audio and Text | 2021 | NeurIPS 2021 | [paper](https://arxiv.org/abs/2104.11178) | [code](https://github.com/google-research/google-research/tree/master/vatt) & [weights](https://github.com/google-research/google-research/tree/master/vatt#checkpoints) |
 | **Meta-Transformer** | Meta-Transformer: A Unified Framework for Multimodal Learning | 2023 | arXiv | [paper](https://arxiv.org/abs/2307.10802) | [code](https://github.com/invictus717/MetaTransformer) & [weights](https://huggingface.co/kxgong/Meta-Transformer) |
 
 ### Efficient spatiotemporal backbones
