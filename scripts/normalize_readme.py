@@ -23,7 +23,7 @@ MONTHS = {"January", "February", "March", "April", "May", "June", "July",
 STAGE_COLORS = {"1": "E4FF77", "2": "FF8934", "3": "6342E8", "4": "ADAAFF"}
 STAGE_COLORS = {"1": "E4FF77", "2": "FF8934", "3": "6342E8", "4": "ADAAFF"}
 LINK = re.compile(r"\[([^\]]*)\]\((?!#\))([^)]+)\)")
-IMG_LINK = re.compile(r"\[!\[([^\]]*)\]\(([^)]+)\)\]\(([^)]+)\)")
+IMG_LINK = re.compile(r"\[!\[([^\]]*)\]\((.*?)\)\]\((.*?)\)")
 
 
 def esc(s):
@@ -180,8 +180,12 @@ def normalize(text):
     c = lines.index("## Contents")
     end = next(i for i, l in enumerate(lines[c + 1:], c + 1) if l.startswith("## "))
     lines = lines[:c + 1] + [""] + toc + [""] + lines[end:]
-    return re.sub(r"badge/papers-[0-9]+-", f"badge/papers-{sum(counts.values())}-",
+    text = re.sub(r"badge/papers-[0-9]+-", f"badge/papers-{sum(counts.values())}-",
                   "\n".join(lines))
+    for line in text.split("\n"):
+        if ")](https://img.shields.io" in line:   # a badge is never a link destination
+            sys.exit("error: corrupted badge link, the real URL is lost:\n  " + line.strip())
+    return text
 
 
 def self_test():
@@ -200,6 +204,10 @@ def self_test():
     assert unoff == normalize_row(unoff), "unofficial badge not idempotent:\n%s" % unoff
     assert "%28unofficial%29" in unoff, unoff
     assert nav_chip("3", "Connector & Token Reduction", 7).endswith("(#3-connector--token-reduction)")
+    parens = ("| **W** | [T](https://arxiv.org/abs/2204.14198) | NeurIPS 2022 | "
+              "[![Weights](" + SHIELD + "%F0%9F%A4%97_Weights_(unofficial)-FFD21E)]"
+              "(https://huggingface.co/o/m) |")     # an unencoded-paren badge must still parse
+    assert "huggingface.co/o/m" in normalize_row(parens), normalize_row(parens)
     print("self-test ok")
 
 
