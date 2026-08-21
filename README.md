@@ -9,7 +9,7 @@ organized by _where in the pipeline the mechanism acts_.**
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/momentslab/awesome-efficient-videollm/pulls)
 [![Last Commit](https://img.shields.io/github/last-commit/momentslab/awesome-efficient-videollm?color=orange)](https://github.com/momentslab/awesome-efficient-videollm/commits/main)
-[![Papers](https://img.shields.io/badge/papers-84-informational)](#contents)
+[![Papers](https://img.shields.io/badge/papers-80-informational)](#contents)
 [![Stars](https://img.shields.io/github/stars/momentslab/awesome-efficient-videollm?style=social)](https://github.com/momentslab/awesome-efficient-videollm/stargazers)
 
 <img alt="Evolution of efficient VideoLLMs" src="https://github.com/user-attachments/assets/579de1c4-582b-4cbf-be19-a43339a2aa8f" />
@@ -23,8 +23,7 @@ organized by _where in the pipeline the mechanism acts_.**
 
 ## The pipeline at a glance
 
-The four sections below follow the four cost centers of the encoder–connector–LLM pipeline,
-using the same color code as the survey:
+The four sections below follow the four cost centers of the encoder–connector–LLM pipeline.
 
 [![Stage 1](https://img.shields.io/badge/1-Frame_Sampling-E4FF77?style=for-the-badge)](#1-frame-sampling)
 [![Stage 2](https://img.shields.io/badge/2-Vision_Encoder-FF8934?style=for-the-badge)](#2-vision-encoder)
