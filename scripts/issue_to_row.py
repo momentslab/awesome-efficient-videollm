@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """Turn an "Add a paper" issue-form submission into a README row.
 
-Reads the issue body from $ISSUE_BODY, inserts a row into the chosen
-subsection (kept sorted by year), and normalizes the whole file. The body is
-untrusted input, so every field is sanitized and every link must be a plain
-https URL.
+Reads the issue body from $ISSUE_BODY. If the paper already exists, reports
+its category without changing README; otherwise inserts a year-sorted row and
+normalizes the file. The body is untrusted input, so every field is sanitized
+and every link must be a plain https URL.
 
     ISSUE_BODY="$(gh issue view N --json body -q .body)" python3 scripts/issue_to_row.py
     python3 scripts/issue_to_row.py --self-test
 """
-import os, re, sys
+import os, re, sys, unicodedata
+from urllib.parse import urlsplit
 
 import normalize_readme as N
 
@@ -42,6 +43,49 @@ def url(value, field):
     if not URL_OK.fullmatch(value):
         sys.exit(f"error: {field} must be a plain https URL, got: {value[:80]!r}")
     return value
+
+
+def paper_key(value):
+    """Stable paper identity: versionless arXiv ID, DOI, or exact URL."""
+    parts = urlsplit(value.strip())
+    host = (parts.hostname or "").lower().removeprefix("www.")
+    path = parts.path.rstrip("/")
+    if host == "arxiv.org":
+        m = re.fullmatch(r"/(?:abs|pdf|html)/(\d{4}\.\d{4,5})(?:v\d+)?(?:\.pdf)?",
+                         path, re.I)
+        if m:
+            return "arxiv:" + m.group(1)
+    if host in {"doi.org", "dx.doi.org"}:
+        return "doi:" + path.lstrip("/").casefold()
+    return host + path + (("?" + parts.query) if parts.query else "")
+
+
+def title_key(value):
+    value = unicodedata.normalize("NFKC", value).casefold()
+    return " ".join("".join(c if c.isalnum() else " " for c in value).split())
+
+
+def find_duplicate(text, fields):
+    """Return the existing method and real category for the same paper."""
+    wanted_url, wanted_title = paper_key(fields["paper"]), title_key(fields["title"])
+    stage = section = ""
+    for line in text.splitlines():
+        if m := re.match(r"^## (\d+)\. ", line):
+            stage, section = m.group(1), ""
+        elif line.startswith("## "):
+            stage = section = ""
+        elif line.startswith("### "):
+            section = line[4:].strip()
+        elif stage and section and line.startswith("| **"):
+            cells = [c.strip() for c in line.strip().strip("|").split("|")]
+            if len(cells) not in (4, 6):
+                continue
+            link = N.LINK.search(cells[1])
+            if not link and len(cells) == 6:
+                link = N.LINK.search(cells[4])
+            if link and (paper_key(link.group(2)) == wanted_url or
+                         wanted_title and title_key(link.group(1)) == wanted_title):
+                return cells[0].replace("**", "").strip(), f"{stage}. {section}"
 
 
 def build_row(f):
@@ -77,7 +121,7 @@ def insert(text, section, row):
 
 def self_test():
     body = ("### Abbreviation\n\nZZProbe\n\n### Paper title\n\nAn Image is Worth 1/2 Tokens\n\n"
-            "### Paper link\n\nhttps://arxiv.org/abs/2403.06764\n\n### Venue\n\nECCV 2024\n\n"
+            "### Paper link\n\nhttps://example.org/papers/zzprobe\n\n### Venue\n\nECCV 2024\n\n"
             "### Year\n\n2024\n\n### Code link\n\nhttps://github.com/o/r\n\n"
             "### Weights link\n\n_No response_\n\n"
             "### Where does it belong?\n\n1. Fixed coverage sampling\n")
@@ -88,6 +132,19 @@ def self_test():
     new = N.normalize(insert(open("README.md").read(), f["section"], row))
     assert new.count("**ZZProbe**") == 1 and N.normalize(new) == new, "insert not stable"
     assert "github/stars/o/r" in new, "code link did not become a star badge"
+    readme = open("README.md").read()
+    duplicate = find_duplicate(readme, {
+        "paper": "https://arxiv.org/pdf/2403.06764v9.pdf", "title": "different title"})
+    assert duplicate == ("FastV", "4. Decoder-layer token pruning & merging"), duplicate
+    assert paper_key("https://arxiv.org/html/2403.06764v2") == "arxiv:2403.06764"
+    assert paper_key("https://dx.doi.org/10.1007/ABC/?from=issue") == \
+           paper_key("https://doi.org/10.1007/abc")
+    duplicate = find_duplicate(readme, {
+        "paper": "https://example.org/fastv",
+        "title": "AN IMAGE IS WORTH 1/2 TOKENS AFTER LAYER 2 — PLUG-AND-PLAY INFERENCE "
+                 "ACCELERATION FOR LARGE VISION-LANGUAGE MODELS"})
+    assert duplicate == ("FastV", "4. Decoder-layer token pruning & merging"), duplicate
+    assert find_duplicate(readme, f) is None, "unrelated paper reported as duplicate"
     evil = parse("### Abbreviation\n\na | b `x` [y](z)\n\n### Paper link\n\njavascript:alert(1)\n")
     assert clean(evil["abbrev"]) == "a / b x y(z)", clean(evil["abbrev"])  # link defused
     try:
@@ -106,6 +163,13 @@ if __name__ == "__main__":
                if k not in fields]
     if missing:
         sys.exit(f"error: issue is missing required fields: {', '.join(missing)}")
-    readme = insert(open("README.md").read(), fields["section"], build_row(fields))
+    fields["paper"] = url(fields["paper"], "paper link")
+    readme = open("README.md").read()
+    if duplicate := find_duplicate(readme, fields):
+        method, section = duplicate
+        print(f"Thanks. This paper is already listed as **{method}** under **{section}**, "
+              "so I am closing this request.")
+        sys.exit(0)
+    readme = insert(readme, fields["section"], build_row(fields))
     open("README.md", "w").write(N.normalize(readme))
     print(f"Added **{clean(fields['abbrev'], 60)}** to _{clean(fields['section'], 80)}_.")

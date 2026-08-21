@@ -2,7 +2,7 @@ name: Paper request
 
 on:
   issues:
-    types: [opened, reopened, labeled]
+    types: [opened]
 
 permissions:
   contents: write
@@ -11,9 +11,7 @@ permissions:
 
 jobs:
   open-pr:
-    # Keyed off the form itself: a label declared in an issue template is dropped
-    # silently unless that label already exists in the repo.
-    if: contains(github.event.issue.body, '### Where does it belong?')
+    if: contains(github.event.issue.labels.*.name, 'add-paper')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -30,13 +28,13 @@ jobs:
           open=$(gh pr list --head "paper/issue-$NUMBER" --state open --json number --jq 'length')
           echo "exists=$open" >> "$GITHUB_OUTPUT"
           [ "$open" = "0" ] || echo "PR for #$NUMBER already open, nothing to do"
-      - name: Add the row
+      - name: Check for a duplicate or add the row
         if: steps.guard.outputs.exists == '0'
         id: add
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}   # untrusted: passed as env, never inlined
         run: echo "summary=$(python3 scripts/issue_to_row.py)" >> "$GITHUB_OUTPUT"
-      - name: Open the pull request
+      - name: Open the pull request or close a duplicate
         if: steps.guard.outputs.exists == '0'
         env:
           GH_TOKEN: ${{ github.token }}
@@ -44,7 +42,10 @@ jobs:
           TITLE: ${{ github.event.issue.title }}
           SUMMARY: ${{ steps.add.outputs.summary }}
         run: |
-          git diff --quiet README.md && { echo "nothing to add"; exit 0; }
+          if git diff --quiet README.md; then
+            gh issue close "$NUMBER" --reason duplicate --comment "$SUMMARY"
+            exit 0
+          fi
           git config user.name  'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git checkout -b "paper/issue-$NUMBER"
