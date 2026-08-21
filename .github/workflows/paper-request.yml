@@ -2,7 +2,7 @@ name: Paper request
 
 on:
   issues:
-    types: [opened]
+    types: [opened, reopened, labeled]
 
 permissions:
   contents: write
@@ -11,7 +11,9 @@ permissions:
 
 jobs:
   open-pr:
-    if: contains(github.event.issue.labels.*.name, 'add-paper')
+    # Keyed off the form itself: a label declared in an issue template is dropped
+    # silently unless that label already exists in the repo.
+    if: contains(github.event.issue.body, '### Where does it belong?')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,12 +21,23 @@ jobs:
         with:
           python-version: '3.x'
       - run: python3 scripts/issue_to_row.py --self-test
+      - name: Skip if a pull request is already open for this issue
+        id: guard
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.issue.number }}
+        run: |
+          open=$(gh pr list --head "paper/issue-$NUMBER" --state open --json number --jq 'length')
+          echo "exists=$open" >> "$GITHUB_OUTPUT"
+          [ "$open" = "0" ] || echo "PR for #$NUMBER already open, nothing to do"
       - name: Add the row
+        if: steps.guard.outputs.exists == '0'
         id: add
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}   # untrusted: passed as env, never inlined
         run: echo "summary=$(python3 scripts/issue_to_row.py)" >> "$GITHUB_OUTPUT"
       - name: Open the pull request
+        if: steps.guard.outputs.exists == '0'
         env:
           GH_TOKEN: ${{ github.token }}
           NUMBER: ${{ github.event.issue.number }}
