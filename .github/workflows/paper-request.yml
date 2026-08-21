@@ -41,6 +41,8 @@ jobs:
           NUMBER: ${{ github.event.issue.number }}
           TITLE: ${{ github.event.issue.title }}
           SUMMARY: ${{ steps.add.outputs.summary }}
+          AUTHOR_LOGIN: ${{ github.event.issue.user.login }}
+          AUTHOR_ID: ${{ github.event.issue.user.id }}
         run: |
           if git diff --quiet README.md; then
             gh issue close "$NUMBER" --reason duplicate --comment "$SUMMARY"
@@ -49,7 +51,8 @@ jobs:
           git config user.name  'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git checkout -b "paper/issue-$NUMBER"
-          git commit -am "docs: add paper requested in #$NUMBER"
+          git commit -am "docs: add paper requested in #$NUMBER" \
+            -m "Co-authored-by: $AUTHOR_LOGIN <$AUTHOR_ID+$AUTHOR_LOGIN@users.noreply.github.com>"
           git push -u origin "paper/issue-$NUMBER"
           gh pr create --title "$TITLE" \
             --body "$SUMMARY"$'\n\n'"Opened automatically from #$NUMBER. Closes #$NUMBER."
