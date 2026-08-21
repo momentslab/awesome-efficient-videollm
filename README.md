@@ -75,23 +75,23 @@ Bracketed numbers are how many methods each stage lists.
 
 | Method | Title | Venue | Code & Weights |
 | --- | --- | :-: | :-: |
-| **TSN** | [Temporal Segment Networks: Towards Good Practices for Deep Action Recognition](https://arxiv.org/abs/1608.00859) | ECCV 2016 | [![Star](https://img.shields.io/github/stars/yjxiong/temporal-segment-networks.svg?style=social&label=Star)](https://github.com/yjxiong/temporal-segment-networks) |
+| **TSN** | [Temporal Segment Networks: Towards Good Practices for Deep Action Recognition](https://arxiv.org/abs/1608.00859) | ![venue](https://img.shields.io/badge/ECCV-2016-1f6feb) | [![Star](https://img.shields.io/github/stars/yjxiong/temporal-segment-networks.svg?style=social&label=Star)](https://github.com/yjxiong/temporal-segment-networks) |
 
 ### Training-free visual summarization
 
 | Method | Title | Venue | Code & Weights |
 | --- | --- | :-: | :-: |
 | **KTS** | [Category-Specific Video Summarization](https://doi.org/10.1007/978-3-319-10599-4_35) | ![venue](https://img.shields.io/badge/ECCV-2014-1f6feb) | — |
-| **KTS-Adaptive** | [Revisiting Kernel Temporal Segmentation as an Adaptive Tokenizer for Long-form Video Understanding](https://arxiv.org/abs/2309.11569v1) | ICCVW 2023 | — |
+| **KTS-Adaptive** | [Revisiting Kernel Temporal Segmentation as an Adaptive Tokenizer for Long-form Video Understanding](https://arxiv.org/abs/2309.11569v1) | ![venue](https://img.shields.io/badge/ICCVW-2023-1f6feb) | — |
 | **F2C** | [From Frames to Clips: Training-free Adaptive Key Clip Selection for Long-Form Video Understanding](https://arxiv.org/abs/2510.02262) | ![arXiv](https://img.shields.io/badge/arXiv-2025-b31b1b) | — |
-| **MaxInfo** | [MaxInfo: A Training-Free Key-Frame Selection Method Using Maximum Volume for Enhanced Video Understanding](https://arxiv.org/abs/2502.03183) | WACV 2026 | [![Star](https://img.shields.io/github/stars/FusionBrainLab/MaxInfo.svg?style=social&label=Star)](https://github.com/FusionBrainLab/MaxInfo) |
+| **MaxInfo** | [MaxInfo: A Training-Free Key-Frame Selection Method Using Maximum Volume for Enhanced Video Understanding](https://arxiv.org/abs/2502.03183) | ![venue](https://img.shields.io/badge/WACV-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/FusionBrainLab/MaxInfo.svg?style=social&label=Star)](https://github.com/FusionBrainLab/MaxInfo) |
 
 ### Learned video-only selection
 
 | Method | Title | Venue | Code & Weights |
 | --- | --- | :-: | :-: |
-| **AdaFrame** | [AdaFrame: Adaptive Frame Selection for Fast Video Recognition](https://arxiv.org/abs/1811.12432v2) | CVPR 2019 | — |
-| **MGSampler** | [MGSampler: An Explainable Sampling Strategy for Video Action Recognition](https://arxiv.org/abs/2104.09952) | ICCV 2021 | [![Star](https://img.shields.io/github/stars/MCG-NJU/MGSampler.svg?style=social&label=Star)](https://github.com/MCG-NJU/MGSampler) |
+| **AdaFrame** | [AdaFrame: Adaptive Frame Selection for Fast Video Recognition](https://arxiv.org/abs/1811.12432v2) | ![venue](https://img.shields.io/badge/CVPR-2019-1f6feb) | — |
+| **MGSampler** | [MGSampler: An Explainable Sampling Strategy for Video Action Recognition](https://arxiv.org/abs/2104.09952) | ![venue](https://img.shields.io/badge/ICCV-2021-1f6feb) | [![Star](https://img.shields.io/github/stars/MCG-NJU/MGSampler.svg?style=social&label=Star)](https://github.com/MCG-NJU/MGSampler) |
 | **PEEK** | [PEEK: Picking Essential frames via Efficient Knowledge distillation](https://arxiv.org/abs/2605.31029) | ![venue](https://img.shields.io/badge/BMVC-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/momentslab/peek.svg?style=social&label=Star)](https://github.com/momentslab/peek) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/momentslab/peek) |
 | **AutoGaze** | [Attend Before Attention: Efficient and Scalable Video Understanding via Autoregressive Gazing](https://arxiv.org/abs/2603.12254) | ![venue](https://img.shields.io/badge/CVPR-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/NVlabs/AutoGaze.svg?style=social&label=Star)](https://github.com/NVlabs/AutoGaze) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/collections/bfshi/autogaze) |
 
@@ -113,7 +113,7 @@ Bracketed numbers are how many methods each stage lists.
 | --- | --- | :-: | :-: |
 | **Frame-Voyager** | [Frame-Voyager: Learning to Query Frames for Video Large Language Models](https://arxiv.org/abs/2410.03226) | ![venue](https://img.shields.io/badge/ICLR-2025-1f6feb) | — |
 | **GenS** | [Generative Frame Sampler for Long Video Understanding](https://arxiv.org/abs/2503.09146) | ![venue](https://img.shields.io/badge/ACL_2025_Findings-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/yaolinli/GenS.svg?style=social&label=Star)](https://github.com/yaolinli/GenS) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/yaolily/GenS) |
-| **HFS** | [HFS: Holistic Query-Aware Frame Selection for Efficient Video Reasoning](https://arxiv.org/abs/2512.11534) | ACM MM 2026 | — |
+| **HFS** | [HFS: Holistic Query-Aware Frame Selection for Efficient Video Reasoning](https://arxiv.org/abs/2512.11534) | ![venue](https://img.shields.io/badge/ACM_MM-2026-1f6feb) | — |
 | **RL-FrameSel** | [Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](https://openaccess.thecvf.com/content/CVPR2026/html/Qin_Efficient_Frame_Selection_for_Long_Video_Understanding_via_Reinforcement_Learning_CVPR_2026_paper.html) | ![venue](https://img.shields.io/badge/CVPR-2026-1f6feb) | — |
 
 
