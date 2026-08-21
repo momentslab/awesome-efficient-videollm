@@ -9,7 +9,7 @@ organized by _where in the pipeline the mechanism acts_.**
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/momentslab/awesome-efficient-videollm/pulls)
 [![Last Commit](https://img.shields.io/github/last-commit/momentslab/awesome-efficient-videollm?color=orange)](https://github.com/momentslab/awesome-efficient-videollm/commits/main)
-[![Papers](https://img.shields.io/badge/papers-7-informational)](#contents)
+[![Papers](https://img.shields.io/badge/papers-80-informational)](#contents)
 [![Stars](https://img.shields.io/github/stars/momentslab/awesome-efficient-videollm?style=social)](https://github.com/momentslab/awesome-efficient-videollm/stargazers)
 
 <img alt="Evolution of efficient VideoLLMs" src="https://github.com/user-attachments/assets/579de1c4-582b-4cbf-be19-a43339a2aa8f" />
@@ -26,10 +26,10 @@ organized by _where in the pipeline the mechanism acts_.**
 The four sections below follow the four cost centers of the encoder–connector–LLM pipeline,
 in the survey's own color code. Bracketed numbers are how many methods each stage lists.
 
-[![Stage 1](https://img.shields.io/badge/1-Frame_Sampling_%283%29-E4FF77?style=for-the-badge)](#1-frame-sampling)
-[![Stage 2](https://img.shields.io/badge/2-Vision_Encoder_%2899%29-FF8934?style=for-the-badge)](#2-vision-encoder)
-[![Stage 3](https://img.shields.io/badge/3-Connector_&_Token_Reduction_%281%29-6342E8?style=for-the-badge)](#3-connector--token-reduction)
-[![Stage 4](https://img.shields.io/badge/4-LLM--side_Vision_Tokens_%2842%29-ADAAFF?style=for-the-badge)](#4-llm-side-vision-tokens)
+[![Stage 1](https://img.shields.io/badge/1-Frame_Sampling_%2818%29-E4FF77?style=for-the-badge)](#1-frame-sampling)
+[![Stage 2](https://img.shields.io/badge/2-Vision_Encoder_%2826%29-FF8934?style=for-the-badge)](#2-vision-encoder)
+[![Stage 3](https://img.shields.io/badge/3-Connector_&_Token_Reduction_%2829%29-6342E8?style=for-the-badge)](#3-connector--token-reduction)
+[![Stage 4](https://img.shields.io/badge/4-LLM--side_Vision_Tokens_%287%29-ADAAFF?style=for-the-badge)](#4-llm-side-vision-tokens)
 
 | Stage | What it controls | Efficiency lever |
 | :-- | :-- | :-- |
@@ -65,7 +65,7 @@ in the survey's own color code. Bracketed numbers are how many methods each stag
 
 ## 1. Frame Sampling
 
-![Stage 1](https://img.shields.io/badge/Stage_1-Frame_Sampling_%283%29-E4FF77?style=flat-square)
+![Stage 1](https://img.shields.io/badge/Stage_1-Frame_Sampling_%2818%29-E4FF77?style=flat-square)
 
 ### Fixed coverage sampling
 
@@ -113,7 +113,7 @@ in the survey's own color code. Bracketed numbers are how many methods each stag
 
 ## 2. Vision Encoder
 
-![Stage 2](https://img.shields.io/badge/Stage_2-Vision_Encoder_%2899%29-FF8934?style=flat-square)
+![Stage 2](https://img.shields.io/badge/Stage_2-Vision_Encoder_%2826%29-FF8934?style=flat-square)
 
 ### Shared / unified multimodal encoders
 
@@ -174,7 +174,7 @@ in the survey's own color code. Bracketed numbers are how many methods each stag
 
 ## 3. Connector & Token Reduction
 
-![Stage 3](https://img.shields.io/badge/Stage_3-Connector_&_Token_Reduction_%281%29-6342E8?style=flat-square)
+![Stage 3](https://img.shields.io/badge/Stage_3-Connector_&_Token_Reduction_%2829%29-6342E8?style=flat-square)
 
 ### Training-free token pruning & merging
 
@@ -233,7 +233,7 @@ in the survey's own color code. Bracketed numbers are how many methods each stag
 
 ## 4. LLM-side Vision Tokens
 
-![Stage 4](https://img.shields.io/badge/Stage_4-LLM--side_Vision_Tokens_%2842%29-ADAAFF?style=flat-square)
+![Stage 4](https://img.shields.io/badge/Stage_4-LLM--side_Vision_Tokens_%287%29-ADAAFF?style=flat-square)
 
 ### Decoder-layer token pruning & merging
 
