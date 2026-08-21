@@ -5,6 +5,10 @@
 **A curated list of efficiency mechanisms for video large language models (VideoLLMs),
 organized by _where in the pipeline the mechanism acts_.**
 
+<a href="https://github.com/momentslab/awesome-efficient-videollm/issues/new?template=add-paper.yml"><img alt="Add a paper" height="42" src="https://img.shields.io/badge/%E2%9E%95_Add_a_paper-2ea043?style=for-the-badge"></a>
+
+Know a method that belongs here? Fill six fields — we open the pull request for you.
+
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/momentslab/awesome-efficient-videollm/pulls)
