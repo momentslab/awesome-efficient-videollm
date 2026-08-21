@@ -13,7 +13,7 @@ Fill in the form and a pull request is opened for you.
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/momentslab/awesome-efficient-videollm/pulls)
 [![Last Commit](https://img.shields.io/github/last-commit/momentslab/awesome-efficient-videollm?color=orange)](https://github.com/momentslab/awesome-efficient-videollm/commits/main)
-[![Papers](https://img.shields.io/badge/papers-81-informational)](#contents)
+[![Papers](https://img.shields.io/badge/papers-82-informational)](#contents)
 [![Stars](https://img.shields.io/github/stars/momentslab/awesome-efficient-videollm?style=social)](https://github.com/momentslab/awesome-efficient-videollm/stargazers)
 
 <img alt="Evolution of efficient VideoLLMs" src="https://github.com/user-attachments/assets/579de1c4-582b-4cbf-be19-a43339a2aa8f" />
@@ -31,7 +31,7 @@ The four sections below follow the four cost centers of the encoderâ€“connectorâ
 Bracketed numbers are how many methods each stage lists.
 
 [![Stage 1](https://img.shields.io/badge/1-Frame_Sampling_%2819%29-E4FF77?style=for-the-badge)](#1-frame-sampling)
-[![Stage 2](https://img.shields.io/badge/2-Vision_Encoder_%2826%29-FF8934?style=for-the-badge)](#2-vision-encoder)
+[![Stage 2](https://img.shields.io/badge/2-Vision_Encoder_%2827%29-FF8934?style=for-the-badge)](#2-vision-encoder)
 [![Stage 3](https://img.shields.io/badge/3-Connector_&_Token_Reduction_%2829%29-6342E8?style=for-the-badge)](#3-connector--token-reduction)
 [![Stage 4](https://img.shields.io/badge/4-LLM--side_Vision_Tokens_%287%29-ADAAFF?style=for-the-badge)](#4-llm-side-vision-tokens)
 
@@ -118,7 +118,7 @@ Bracketed numbers are how many methods each stage lists.
 
 ## 2. Vision Encoder
 
-![Stage 2](https://img.shields.io/badge/Stage_2-Vision_Encoder_%2826%29-FF8934?style=flat-square)
+![Stage 2](https://img.shields.io/badge/Stage_2-Vision_Encoder_%2827%29-FF8934?style=flat-square)
 
 ### Shared / unified multimodal encoders
 
@@ -141,6 +141,7 @@ Bracketed numbers are how many methods each stage lists.
 | **UniFormer** | [UniFormer: Unified Transformer for Efficient Spatiotemporal Representation Learning](https://arxiv.org/abs/2201.04676) | ![venue](https://img.shields.io/badge/ICLR-2022-1f6feb) | [![Star](https://img.shields.io/github/stars/Sense-X/UniFormer.svg?style=social&label=Star)](https://github.com/Sense-X/UniFormer) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/Sense-X/uniformer_video) |
 | **Hiera** | [Hiera: A Hierarchical Vision Transformer without the Bells-and-Whistles](https://arxiv.org/abs/2306.00989) | ![venue](https://img.shields.io/badge/ICML-2023-1f6feb) | [![Star](https://img.shields.io/github/stars/facebookresearch/hiera.svg?style=social&label=Star)](https://github.com/facebookresearch/hiera) [![Weights](https://img.shields.io/badge/Weights-link-181717?logo=github&logoColor=white)](https://github.com/facebookresearch/hiera#model-zoo) |
 | **UniFormerV2** | [UniFormerV2: Spatiotemporal Learning by Arming Image ViTs with Video UniFormer](https://arxiv.org/abs/2211.09552) | ![venue](https://img.shields.io/badge/ICCV-2023-1f6feb) | [![Star](https://img.shields.io/github/stars/OpenGVLab/UniFormerV2.svg?style=social&label=Star)](https://github.com/OpenGVLab/UniFormerV2) [![Weights](https://img.shields.io/badge/Weights-link-181717?logo=github&logoColor=white)](https://github.com/OpenGVLab/UniFormerV2/blob/main/MODEL_ZOO.md) |
+| **MoE-ViE** | [MoE-ViE: Mixture of Experts Vision Encoder for Efficient Image and Video Understanding](https://arxiv.org/abs/2608.17402) | ![venue](https://img.shields.io/badge/ECCV-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/facebookresearch/moe_vie.svg?style=social&label=Star)](https://github.com/facebookresearch/moe_vie) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/models?search=facebook/MoEViE) |
 
 ### Linear-complexity / state-space
 
