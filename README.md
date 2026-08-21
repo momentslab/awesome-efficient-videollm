@@ -277,6 +277,10 @@ After the merge, a bot rewrites the row into the badge form the tables use, rege
 contents list, and updates the per-stage and total counts. You do not need to match the badge
 syntax or correct the counts yourself.
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ## Citation
 
 ```bibtex
