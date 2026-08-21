@@ -13,7 +13,7 @@ Fill in the form and a pull request is opened for you.
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/momentslab/awesome-efficient-videollm/pulls)
 [![Last Commit](https://img.shields.io/github/last-commit/momentslab/awesome-efficient-videollm?color=orange)](https://github.com/momentslab/awesome-efficient-videollm/commits/main)
-[![Papers](https://img.shields.io/badge/papers-82-informational)](#contents)
+[![Papers](https://img.shields.io/badge/papers-83-informational)](#contents)
 [![Stars](https://img.shields.io/github/stars/momentslab/awesome-efficient-videollm?style=social)](https://github.com/momentslab/awesome-efficient-videollm/stargazers)
 
 <img alt="Evolution of efficient VideoLLMs" src="https://github.com/user-attachments/assets/579de1c4-582b-4cbf-be19-a43339a2aa8f" />
@@ -30,7 +30,7 @@ Fill in the form and a pull request is opened for you.
 The four sections below follow the four cost centers of the encoder–connector–LLM pipeline.
 Bracketed numbers are how many methods each stage lists.
 
-[![Stage 1](https://img.shields.io/badge/1-Frame_Sampling_%2819%29-E4FF77?style=for-the-badge)](#1-frame-sampling)
+[![Stage 1](https://img.shields.io/badge/1-Frame_Sampling_%2820%29-E4FF77?style=for-the-badge)](#1-frame-sampling)
 [![Stage 2](https://img.shields.io/badge/2-Vision_Encoder_%2827%29-FF8934?style=for-the-badge)](#2-vision-encoder)
 [![Stage 3](https://img.shields.io/badge/3-Connector_&_Token_Reduction_%2829%29-6342E8?style=for-the-badge)](#3-connector--token-reduction)
 [![Stage 4](https://img.shields.io/badge/4-LLM--side_Vision_Tokens_%287%29-ADAAFF?style=for-the-badge)](#4-llm-side-vision-tokens)
@@ -69,7 +69,7 @@ Bracketed numbers are how many methods each stage lists.
 
 ## 1. Frame Sampling
 
-![Stage 1](https://img.shields.io/badge/Stage_1-Frame_Sampling_%2819%29-E4FF77?style=flat-square)
+![Stage 1](https://img.shields.io/badge/Stage_1-Frame_Sampling_%2820%29-E4FF77?style=flat-square)
 
 ### Fixed coverage sampling
 
@@ -93,6 +93,7 @@ Bracketed numbers are how many methods each stage lists.
 | **AdaFrame** | [AdaFrame: Adaptive Frame Selection for Fast Video Recognition](https://arxiv.org/abs/1811.12432v2) | ![arXiv](https://img.shields.io/badge/arXiv-2018-b31b1b) | — |
 | **MGSampler** | [MGSampler: An Explainable Sampling Strategy for Video Action Recognition](https://arxiv.org/abs/2104.09952) | ![arXiv](https://img.shields.io/badge/arXiv-2021-b31b1b) | [![Star](https://img.shields.io/github/stars/MCG-NJU/MGSampler.svg?style=social&label=Star)](https://github.com/MCG-NJU/MGSampler) |
 | **PEEK** | [PEEK: Picking Essential frames via Efficient Knowledge distillation](https://arxiv.org/abs/2605.31029) | ![arXiv](https://img.shields.io/badge/arXiv-2026-b31b1b) | [![Star](https://img.shields.io/github/stars/momentslab/peek.svg?style=social&label=Star)](https://github.com/momentslab/peek) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/momentslab/peek) |
+| **AutoGaze** | [Attend Before Attention: Efficient and Scalable Video Understanding via Autoregressive Gazing](https://arxiv.org/abs/2603.12254) | ![venue](https://img.shields.io/badge/CVPR-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/NVlabs/AutoGaze.svg?style=social&label=Star)](https://github.com/NVlabs/AutoGaze) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/collections/bfshi/autogaze) |
 
 ### Training-free relevance / diversity
 
