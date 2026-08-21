@@ -9,7 +9,7 @@ organized by _where in the pipeline the mechanism acts_.**
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/momentslab/awesome-efficient-videollm/pulls)
 [![Last Commit](https://img.shields.io/github/last-commit/momentslab/awesome-efficient-videollm?color=orange)](https://github.com/momentslab/awesome-efficient-videollm/commits/main)
-[![Papers](https://img.shields.io/badge/papers-80-informational)](#contents)
+[![Papers](https://img.shields.io/badge/papers-7-informational)](#contents)
 [![Stars](https://img.shields.io/github/stars/momentslab/awesome-efficient-videollm?style=social)](https://github.com/momentslab/awesome-efficient-videollm/stargazers)
 
 <img alt="Evolution of efficient VideoLLMs" src="https://github.com/user-attachments/assets/579de1c4-582b-4cbf-be19-a43339a2aa8f" />
@@ -23,12 +23,13 @@ organized by _where in the pipeline the mechanism acts_.**
 
 ## The pipeline at a glance
 
-The four sections below follow the four cost centers of the encoder–connector–LLM pipeline.
+The four sections below follow the four cost centers of the encoder–connector–LLM pipeline,
+in the survey's own color code. Bracketed numbers are how many methods each stage lists.
 
-[![Stage 1](https://img.shields.io/badge/1-Frame_Sampling-E4FF77?style=for-the-badge)](#1-frame-sampling)
-[![Stage 2](https://img.shields.io/badge/2-Vision_Encoder-FF8934?style=for-the-badge)](#2-vision-encoder)
-[![Stage 3](https://img.shields.io/badge/3-Connector_&_Token_Reduction-6342E8?style=for-the-badge)](#3-connector--token-reduction)
-[![Stage 4](https://img.shields.io/badge/4-LLM--side_Vision_Tokens-ADAAFF?style=for-the-badge)](#4-llm-side-vision-tokens)
+[![Stage 1](https://img.shields.io/badge/1-Frame_Sampling_%283%29-E4FF77?style=for-the-badge)](#1-frame-sampling)
+[![Stage 2](https://img.shields.io/badge/2-Vision_Encoder_%2899%29-FF8934?style=for-the-badge)](#2-vision-encoder)
+[![Stage 3](https://img.shields.io/badge/3-Connector_&_Token_Reduction_%281%29-6342E8?style=for-the-badge)](#3-connector--token-reduction)
+[![Stage 4](https://img.shields.io/badge/4-LLM--side_Vision_Tokens_%2842%29-ADAAFF?style=for-the-badge)](#4-llm-side-vision-tokens)
 
 | Stage | What it controls | Efficiency lever |
 | :-- | :-- | :-- |
@@ -62,10 +63,9 @@ The four sections below follow the four cost centers of the encoder–connector�
   - [Decoder-layer token pruning & merging](#decoder-layer-token-pruning--merging)
   - [Visual KV-cache compression](#visual-kv-cache-compression)
 
-
 ## 1. Frame Sampling
 
-![Stage 1](https://img.shields.io/badge/Stage_1-Frame_Sampling-E4FF77?style=flat-square)
+![Stage 1](https://img.shields.io/badge/Stage_1-Frame_Sampling_%283%29-E4FF77?style=flat-square)
 
 ### Fixed coverage sampling
 
@@ -113,7 +113,7 @@ The four sections below follow the four cost centers of the encoder–connector�
 
 ## 2. Vision Encoder
 
-![Stage 2](https://img.shields.io/badge/Stage_2-Vision_Encoder-FF8934?style=flat-square)
+![Stage 2](https://img.shields.io/badge/Stage_2-Vision_Encoder_%2899%29-FF8934?style=flat-square)
 
 ### Shared / unified multimodal encoders
 
@@ -174,7 +174,7 @@ The four sections below follow the four cost centers of the encoder–connector�
 
 ## 3. Connector & Token Reduction
 
-![Stage 3](https://img.shields.io/badge/Stage_3-Connector_&_Token_Reduction-6342E8?style=flat-square)
+![Stage 3](https://img.shields.io/badge/Stage_3-Connector_&_Token_Reduction_%281%29-6342E8?style=flat-square)
 
 ### Training-free token pruning & merging
 
@@ -193,7 +193,7 @@ The four sections below follow the four cost centers of the encoder–connector�
 
 | Method | Title | Venue | Code & Weights |
 | --- | --- | :-: | :-: |
-| **Perceiver Resampler (Flamingo)** | [Flamingo: A Visual Language Model for Few-Shot Learning](https://arxiv.org/abs/2204.14198) | ![venue](https://img.shields.io/badge/NeurIPS-2022-1f6feb) | [![Code](https://img.shields.io/badge/Code-unofficial-lightgrey?logo=github)](https://github.com/mlfoundations/open_flamingo) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights_(unofficial)-FFD21E)](https://huggingface.co/openflamingo/models) |
+| **Perceiver Resampler (Flamingo)** | [Flamingo: A Visual Language Model for Few-Shot Learning](https://arxiv.org/abs/2204.14198) | ![venue](https://img.shields.io/badge/NeurIPS-2022-1f6feb) | [![Code](https://img.shields.io/badge/Code-unofficial-lightgrey?logo=github)](https://github.com/mlfoundations/open_flamingo) [![Weights](https://img.shields.io/badge/Weights-link-181717?logo=github&logoColor=white)](https://img.shields.io/badge/%F0%9F%A4%97_Weights_(unofficial) |
 | **LLaMA-VID** | [LLaMA-VID: An Image Is Worth 2 Tokens in Large Language Models](https://arxiv.org/abs/2311.17043) | ![venue](https://img.shields.io/badge/ECCV-2024-1f6feb) | [![Star](https://img.shields.io/github/stars/dvlab-research/LLaMA-VID.svg?style=social&label=Star)](https://github.com/dvlab-research/LLaMA-VID) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/collections/YanweiLi/llama-vid) |
 | **Video-LLaMA Q-Former** | [Video-LLaMA: An Instruction-tuned Audio-Visual Language Model for Video Understanding](https://arxiv.org/abs/2306.02858) | ![venue](https://img.shields.io/badge/EMNLP_2023_Demo-2023-1f6feb) | [![Star](https://img.shields.io/github/stars/DAMO-NLP-SG/Video-LLaMA.svg?style=social&label=Star)](https://github.com/DAMO-NLP-SG/Video-LLaMA) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/DAMO-NLP-SG/Video-LLaMA-Series) |
 | **LLaVA-Mini** | [LLaVA-Mini: Efficient Image and Video Large Multimodal Models with One Vision Token](https://arxiv.org/abs/2501.03895) | ![venue](https://img.shields.io/badge/ICLR-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/ictnlp/LLaVA-Mini.svg?style=social&label=Star)](https://github.com/ictnlp/LLaVA-Mini) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/ICTNLP/llava-mini-llama-3.1-8b) |
@@ -233,7 +233,7 @@ The four sections below follow the four cost centers of the encoder–connector�
 
 ## 4. LLM-side Vision Tokens
 
-![Stage 4](https://img.shields.io/badge/Stage_4-LLM--side_Vision_Tokens-ADAAFF?style=flat-square)
+![Stage 4](https://img.shields.io/badge/Stage_4-LLM--side_Vision_Tokens_%2842%29-ADAAFF?style=flat-square)
 
 ### Decoder-layer token pruning & merging
 
@@ -266,6 +266,16 @@ Row format:
 
 Use `![arXiv](https://img.shields.io/badge/arXiv-YEAR-b31b1b)` for preprints, and `—` when
 there is no code or no weights.
+
+If badge syntax is a nuisance, write the row in plain markdown
+(`| **Abbrev** | Title | 2026 | ICLR 2026 | [paper](url) | [code](url) |`) and run
+
+```bash
+python3 scripts/normalize_readme.py
+```
+
+which rewrites it into the form above and refreshes the contents list and the paper counts.
+CI runs the same script on every pull request.
 
 ## Citation
 
