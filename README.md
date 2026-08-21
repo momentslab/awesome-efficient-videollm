@@ -193,12 +193,12 @@ Contributions welcome — see [Contributing](#contributing).
 | Abbreviation | Title | Year | Venue | Paper | Code |
 | --- | --- | :-: | :-: | :-: | :-: |
 | **FAVOR** | Fine-Grained Audio-Visual Joint Representations for Multimodal Large Language Models | 2023 | arXiv | [paper](https://arxiv.org/abs/2310.05863) | [code](https://github.com/BriansIDP/AudioVisualLLM) |
-| **Baichuan-Omni** | Baichuan-Omni Technical Report | 2024 | arXiv | [paper](https://arxiv.org/abs/2410.08565) | [code](https://github.com/baichuan-inc/Baichuan-Omni-1.5) |
-| **Qwen2-Audio pooling (audio-only antecedent)** | Qwen2-Audio Technical Report | 2024 | arXiv | [paper](https://arxiv.org/abs/2407.10759) | [code](https://github.com/QwenLM/Qwen2-Audio) |
-| **video-SALMONN** | Video-SALMONN: Speech-Enhanced Audio-Visual Large Language Models | 2024 | arXiv | [paper](https://arxiv.org/abs/2406.15704) | [code](https://github.com/bytedance/SALMONN) |
-| **OmniZip** | OmniZip: Audio-Guided Dynamic Token Compression for Fast Omnimodal Large Language Models | 2025 | arXiv | [paper](https://arxiv.org/abs/2511.14582) | [code](https://github.com/KD-TAO/OmniZip) |
-| **DASH** | DASH: Dynamic Audio-Driven Semantic Chunking for Efficient Omnimodal Token Compression | 2026 | arXiv | [paper](https://arxiv.org/abs/2603.15685) | — |
-| **HyperCLOVA X 8B** | HyperCLOVA X 8B Omni | 2026 | arXiv | [paper](https://arxiv.org/abs/2601.01792) | — |
+| **Baichuan-Omni** | Baichuan-Omni Technical Report | 2024 | arXiv | [paper](https://arxiv.org/abs/2410.08565) | [code](https://github.com/baichuan-inc/Baichuan-Omni-1.5) & [weights](https://huggingface.co/baichuan-inc/Baichuan-Omni-1d5) |
+| **Qwen2-Audio pooling (audio-only antecedent)** | Qwen2-Audio Technical Report | 2024 | arXiv | [paper](https://arxiv.org/abs/2407.10759) | [code](https://github.com/QwenLM/Qwen2-Audio) & [weights](https://huggingface.co/Qwen/Qwen2-Audio-7B) |
+| **video-SALMONN** | Video-SALMONN: Speech-Enhanced Audio-Visual Large Language Models | 2024 | ICML 2024 | [paper](https://arxiv.org/abs/2406.15704) | [code](https://github.com/bytedance/SALMONN/tree/videosalmonn) & [weights](https://huggingface.co/tsinghua-ee/Video-SALMONN) |
+| **OmniZip** | OmniZip: Audio-Guided Dynamic Token Compression for Fast Omnimodal Large Language Models | 2025 | CVPR 2026 | [paper](https://arxiv.org/abs/2511.14582) | [code](https://github.com/KD-TAO/OmniZip) |
+| **DASH** | DASH: Dynamic Audio-Driven Semantic Chunking for Efficient Omnimodal Token Compression | 2026 | ECCV 2026 | [paper](https://arxiv.org/abs/2603.15685) | [code](https://github.com/laychou666/DASH) |
+| **HyperCLOVA X 8B** | HyperCLOVA X 8B Omni | 2026 | arXiv | [paper](https://arxiv.org/abs/2601.01792) | [code](https://github.com/NAVER-Cloud-HyperCLOVA-X/OmniServe) & [weights](https://huggingface.co/naver-hyperclovax/HyperCLOVAX-SEED-Omni-8B) |
 
 
 ## 4. LLM-side Vision Tokens
