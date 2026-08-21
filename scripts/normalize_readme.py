@@ -12,7 +12,7 @@ It also regenerates the Contents list and the paper-count badge.
     python3 scripts/normalize_readme.py --check    # exit 1 if a rewrite is needed
     python3 scripts/normalize_readme.py --self-test
 """
-import re, sys
+import os, re, sys
 
 SHIELD = "https://img.shields.io/badge/"
 ARXIV_RED, VENUE_BLUE = "b31b1b", "1f6feb"
@@ -204,6 +204,7 @@ def self_test():
 
 
 if __name__ == "__main__":
+    os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     if "--self-test" in sys.argv:
         self_test(); sys.exit(0)
     src = open("README.md").read()

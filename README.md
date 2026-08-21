@@ -254,28 +254,20 @@ in the survey's own color code. Bracketed numbers are how many methods each stag
 
 ## Contributing
 
-Pull requests welcome. Add a method to the table of the family whose mechanism it
-matches, keep rows sorted by year, and include a link to the paper (arXiv `abs`
-page preferred) and to the official code and weights when they exist.
+**The easy way:** [open an "Add a paper" issue](https://github.com/momentslab/awesome-efficient-videollm/issues/new?template=add-paper.yml)
+and fill the fields — abbreviation, title, links, venue, and which family it belongs to. A pull
+request is opened automatically, formatted for you. No fork, no markdown, nothing to install.
 
-Row format:
+**By pull request:** edit the table of the family whose mechanism the method matches. Write the row
+however is convenient — this shape is fine:
 
 ```markdown
-| **Abbrev** | [Full title](paper-url) | ![venue](https://img.shields.io/badge/VENUE-YEAR-1f6feb) | [![Star](https://img.shields.io/github/stars/OWNER/REPO.svg?style=social&label=Star)](repo-url) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](weights-url) |
+| **Abbrev** | Full title | 2026 | ICLR 2026 | [paper](paper-url) | [code](repo-url) & [weights](weights-url) |
 ```
 
-Use `![arXiv](https://img.shields.io/badge/arXiv-YEAR-b31b1b)` for preprints, and `—` when
-there is no code or no weights.
-
-If badge syntax is a nuisance, write the row in plain markdown
-(`| **Abbrev** | Title | 2026 | ICLR 2026 | [paper](url) | [code](url) |`) and run
-
-```bash
-python3 scripts/normalize_readme.py
-```
-
-which rewrites it into the form above and refreshes the contents list and the paper counts.
-CI runs the same script on every pull request.
+A bot rewrites merged rows into the badge form the tables use, re-sorts nothing but the contents
+list, and updates the per-stage and total paper counts. Don't worry about badge syntax, and don't
+worry if the counts in the header look stale after your change.
 
 ## Citation
 

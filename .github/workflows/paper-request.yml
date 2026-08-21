@@ -1,0 +1,42 @@
+name: Paper request
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  open-pr:
+    if: contains(github.event.issue.labels.*.name, 'add-paper')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: python3 scripts/issue_to_row.py --self-test
+      - name: Add the row
+        id: add
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}   # untrusted: passed as env, never inlined
+        run: echo "summary=$(python3 scripts/issue_to_row.py)" >> "$GITHUB_OUTPUT"
+      - name: Open the pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.issue.number }}
+          TITLE: ${{ github.event.issue.title }}
+          SUMMARY: ${{ steps.add.outputs.summary }}
+        run: |
+          git diff --quiet README.md && { echo "nothing to add"; exit 0; }
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git checkout -b "paper/issue-$NUMBER"
+          git commit -am "docs: add paper requested in #$NUMBER"
+          git push -u origin "paper/issue-$NUMBER"
+          gh pr create --title "$TITLE" \
+            --body "$SUMMARY"$'\n\n'"Opened automatically from #$NUMBER. Closes #$NUMBER."
+          gh issue comment "$NUMBER" --body "Thanks! A pull request with this row is open — nothing else needed from you."

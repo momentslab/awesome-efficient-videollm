@@ -1,8 +1,10 @@
 name: Normalize README
 
 on:
-  pull_request:
+  push:
+    branches: [main]
     paths: ['README.md', 'scripts/normalize_readme.py']
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -12,25 +14,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          ref: ${{ github.event.pull_request.head.ref }}
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
       - run: python3 scripts/normalize_readme.py --self-test
       - name: Normalize tables, chips, contents and counts
-        env:
-          FORK: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
         run: |
           python3 scripts/normalize_readme.py
           git diff --quiet README.md && { echo "already normalized"; exit 0; }
-          # A fork's branch is not ours to push to, so just tell the contributor what to run.
-          if [ "$FORK" = "true" ]; then
-            git --no-pager diff README.md
-            echo "::error::README needs normalizing — run: python3 scripts/normalize_readme.py"
-            exit 1
-          fi
           git config user.name  'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git commit -am 'chore: normalize README (badges, contents, paper counts)'
