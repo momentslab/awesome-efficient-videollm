@@ -52,4 +52,4 @@ jobs:
           git push -u origin "paper/issue-$NUMBER"
           gh pr create --title "$TITLE" \
             --body "$SUMMARY"$'\n\n'"Opened automatically from #$NUMBER. Closes #$NUMBER."
-          gh issue comment "$NUMBER" --body "Thanks! A pull request with this row is open — nothing else needed from you."
+          gh issue comment "$NUMBER" --body "Thanks. A pull request with this row is open, so there is nothing else to do from your side."

@@ -1,13 +1,13 @@
 name: Add a paper
-description: Suggest a method for the list. Fill the fields — we take care of the formatting.
+description: Suggest a method for the list. We take care of the formatting.
 title: "[Paper] "
 labels: [add-paper]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for contributing! Submitting this opens a pull request automatically —
-        you do not need to fork the repo, edit markdown, or run anything.
+        Thanks for contributing. Submitting this opens a pull request for you, so there is
+        no need to fork the repo, edit markdown, or run anything.
   - type: input
     id: abbrev
     attributes:
@@ -62,7 +62,7 @@ body:
     id: section
     attributes:
       label: Where does it belong?
-      description: Pick the family whose mechanism it matches. Not sure? Pick the closest — we will move it if needed.
+      description: Pick the family whose mechanism it matches. If you are not sure, pick the closest one and we will move it.
       options:
         - 1. Fixed coverage sampling
         - 1. Training-free visual summarization

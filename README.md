@@ -7,7 +7,7 @@ organized by _where in the pipeline the mechanism acts_.**
 
 <a href="https://github.com/momentslab/awesome-efficient-videollm/issues/new?template=add-paper.yml"><img alt="Add a paper" height="42" src="https://img.shields.io/badge/%E2%9E%95_Add_a_paper-2ea043?style=for-the-badge"></a>
 
-Know a method that belongs here? Fill six fields — we open the pull request for you.
+Fill in the form and a pull request is opened for you.
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
@@ -22,10 +22,10 @@ Know a method that belongs here? Fill six fields — we open the pull request fo
 
 > [!NOTE]
 > This list accompanies our survey (link and citation to be added on publication).
-> Contributions are welcome — see [Contributing](#contributing) — whether to add a missing
-> paper, suggest a better category, or update a venue / code / weights link.
+> Contributions are welcome: a missing paper, a better category for an existing one, or an
+> updated venue, code, or weights link. See [Contributing](#contributing).
 
-## The pipeline at a glance
+## The pipeline
 
 The four sections below follow the four cost centers of the encoder–connector–LLM pipeline.
 Bracketed numbers are how many methods each stage lists.
@@ -259,20 +259,20 @@ Bracketed numbers are how many methods each stage lists.
 
 ## Contributing
 
-**The easy way:** [open an "Add a paper" issue](https://github.com/momentslab/awesome-efficient-videollm/issues/new?template=add-paper.yml)
-and fill the fields — abbreviation, title, links, venue, and which family it belongs to. A pull
-request is opened automatically, formatted for you. No fork, no markdown, nothing to install.
+**By issue form.** [Open an "Add a paper" issue](https://github.com/momentslab/awesome-efficient-videollm/issues/new?template=add-paper.yml)
+and give the abbreviation, title, links, venue, and the family it belongs to. A bot opens the pull
+request with the row already formatted. You need no fork, no markdown, and no local tooling.
 
-**By pull request:** edit the table of the family whose mechanism the method matches. Write the row
-however is convenient — this shape is fine:
+**By pull request.** Edit the table of the family whose mechanism the method matches. Write the row
+in whatever shape is convenient. This one is fine:
 
 ```markdown
 | **Abbrev** | Full title | 2026 | ICLR 2026 | [paper](paper-url) | [code](repo-url) & [weights](weights-url) |
 ```
 
-A bot rewrites merged rows into the badge form the tables use, re-sorts nothing but the contents
-list, and updates the per-stage and total paper counts. Don't worry about badge syntax, and don't
-worry if the counts in the header look stale after your change.
+After the merge, a bot rewrites the row into the badge form the tables use, regenerates the
+contents list, and updates the per-stage and total counts. You do not need to match the badge
+syntax or correct the counts yourself.
 
 ## Citation
 

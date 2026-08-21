@@ -219,7 +219,7 @@ if __name__ == "__main__":
     new = normalize(src)
     if "--check" in sys.argv:
         if src != new:
-            sys.exit("README.md is not normalized — run scripts/normalize_readme.py")
+            sys.exit("README.md is not normalized. Run scripts/normalize_readme.py")
         print("README.md is normalized")
     elif src != new:
         open("README.md", "w").write(new)
