@@ -23,8 +23,8 @@ organized by _where in the pipeline the mechanism acts_.**
 
 ## The pipeline at a glance
 
-The four sections below follow the four cost centers of the encoder–connector–LLM pipeline,
-in the survey's own color code. Bracketed numbers are how many methods each stage lists.
+The four sections below follow the four cost centers of the encoder–connector–LLM pipeline.
+Bracketed numbers are how many methods each stage lists.
 
 [![Stage 1](https://img.shields.io/badge/1-Frame_Sampling_%2818%29-E4FF77?style=for-the-badge)](#1-frame-sampling)
 [![Stage 2](https://img.shields.io/badge/2-Vision_Encoder_%2826%29-FF8934?style=for-the-badge)](#2-vision-encoder)
