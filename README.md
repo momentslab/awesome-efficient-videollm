@@ -13,7 +13,7 @@ Fill in the form and a pull request is opened for you.
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/momentslab/awesome-efficient-videollm/pulls)
 [![Last Commit](https://img.shields.io/github/last-commit/momentslab/awesome-efficient-videollm?color=orange)](https://github.com/momentslab/awesome-efficient-videollm/commits/main)
-[![Papers](https://img.shields.io/badge/papers-114-informational)](#contents)
+[![Papers](https://img.shields.io/badge/papers-115-informational)](#contents)
 [![Stars](https://img.shields.io/github/stars/momentslab/awesome-efficient-videollm?style=social)](https://github.com/momentslab/awesome-efficient-videollm/stargazers)
 
 <img width="5748" height="2007" alt="Evolution of efficient VideoLLMs" src="https://github.com/user-attachments/assets/8c5f3fa7-dcd4-4554-90ab-471eecd9810e" />
@@ -32,7 +32,7 @@ Bracketed numbers are how many methods each stage lists.
 
 [![Stage 1](https://img.shields.io/badge/1-Frame_Sampling_%2829%29-E4FF77?style=for-the-badge)](#1-frame-sampling)
 [![Stage 2](https://img.shields.io/badge/2-Vision_Encoder_%2827%29-FF8934?style=for-the-badge)](#2-vision-encoder)
-[![Stage 3](https://img.shields.io/badge/3-Connector_&_Token_Reduction_%2851%29-6342E8?style=for-the-badge)](#3-connector--token-reduction)
+[![Stage 3](https://img.shields.io/badge/3-Connector_&_Token_Reduction_%2852%29-6342E8?style=for-the-badge)](#3-connector--token-reduction)
 [![Stage 4](https://img.shields.io/badge/4-LLM--side_Vision_Tokens_%287%29-ADAAFF?style=for-the-badge)](#4-llm-side-vision-tokens)
 
 | Stage | What it controls | Efficiency lever |
@@ -191,7 +191,7 @@ Bracketed numbers are how many methods each stage lists.
 
 ## 3. Connector & Token Reduction
 
-![Stage 3](https://img.shields.io/badge/Stage_3-Connector_&_Token_Reduction_%2851%29-6342E8?style=flat-square)
+![Stage 3](https://img.shields.io/badge/Stage_3-Connector_&_Token_Reduction_%2852%29-6342E8?style=flat-square)
 
 ### Training-free token pruning & merging
 
@@ -255,6 +255,7 @@ Bracketed numbers are how many methods each stage lists.
 | **Flash-VStream** | [Flash-VStream: Efficient Real-Time Understanding for Long Video Streams](https://arxiv.org/abs/2506.23825) | ![venue](https://img.shields.io/badge/ICCV-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/IVGSZ/Flash-VStream.svg?style=social&label=Star)](https://github.com/IVGSZ/Flash-VStream) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/zhang9302002/Flash-VStream-Qwen-7b) |
 | **VideoLLaMB** | [VideoLLaMB: Long Streaming Video Understanding with Recurrent Memory Bridges](https://arxiv.org/abs/2409.01071) | ![venue](https://img.shields.io/badge/ICCV-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/bigai-nlco/VideoLLaMB.svg?style=social&label=Star)](https://github.com/bigai-nlco/VideoLLaMB) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/ColorfulAI/videollamb-llava-1.5-7b) |
 | **VideoScan** | [VideoScan: Enabling Efficient Streaming Video Understanding via Frame-level Semantic Carriers](https://arxiv.org/abs/2503.09387) | ![arXiv](https://img.shields.io/badge/arXiv-2025-b31b1b) | [![Star](https://img.shields.io/github/stars/LyliAgave/VideoScan.svg?style=social&label=Star)](https://github.com/LyliAgave/VideoScan) |
+| **TimeChat-Online** | [TimeChat-Online: 80% Visual Tokens are Naturally Redundant in Streaming Videos](https://arxiv.org/abs/2504.17343) | ![venue](https://img.shields.io/badge/ACM_MM-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/yaolinli/TimeChat-Online.svg?style=social&label=Star)](https://github.com/yaolinli/TimeChat-Online) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/wyccccc/TimeChatOnline-7B) |
 | **StreamingTOM** | [StreamingTOM: Streaming Token Compression for Efficient Video Understanding](https://arxiv.org/abs/2510.18269) | ![venue](https://img.shields.io/badge/CVPR-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/YIGE24/StreamingTOM.svg?style=social&label=Star)](https://github.com/YIGE24/StreamingTOM) |
 
 ### Audio & audiovisual token compression
