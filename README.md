@@ -13,7 +13,7 @@ Fill in the form and a pull request is opened for you.
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/momentslab/awesome-efficient-videollm/pulls)
 [![Last Commit](https://img.shields.io/github/last-commit/momentslab/awesome-efficient-videollm?color=orange)](https://github.com/momentslab/awesome-efficient-videollm/commits/main)
-[![Papers](https://img.shields.io/badge/papers-91-informational)](#contents)
+[![Papers](https://img.shields.io/badge/papers-92-informational)](#contents)
 [![Stars](https://img.shields.io/github/stars/momentslab/awesome-efficient-videollm?style=social)](https://github.com/momentslab/awesome-efficient-videollm/stargazers)
 
 <img alt="Evolution of efficient VideoLLMs" src="https://github.com/user-attachments/assets/579de1c4-582b-4cbf-be19-a43339a2aa8f" />
@@ -30,7 +30,7 @@ Fill in the form and a pull request is opened for you.
 The four sections below follow the four cost centers of the encoder–connector–LLM pipeline.
 Bracketed numbers are how many methods each stage lists.
 
-[![Stage 1](https://img.shields.io/badge/1-Frame_Sampling_%2827%29-E4FF77?style=for-the-badge)](#1-frame-sampling)
+[![Stage 1](https://img.shields.io/badge/1-Frame_Sampling_%2828%29-E4FF77?style=for-the-badge)](#1-frame-sampling)
 [![Stage 2](https://img.shields.io/badge/2-Vision_Encoder_%2827%29-FF8934?style=for-the-badge)](#2-vision-encoder)
 [![Stage 3](https://img.shields.io/badge/3-Connector_&_Token_Reduction_%2830%29-6342E8?style=for-the-badge)](#3-connector--token-reduction)
 [![Stage 4](https://img.shields.io/badge/4-LLM--side_Vision_Tokens_%287%29-ADAAFF?style=for-the-badge)](#4-llm-side-vision-tokens)
@@ -70,7 +70,7 @@ Bracketed numbers are how many methods each stage lists.
 
 ## 1. Frame Sampling
 
-![Stage 1](https://img.shields.io/badge/Stage_1-Frame_Sampling_%2827%29-E4FF77?style=flat-square)
+![Stage 1](https://img.shields.io/badge/Stage_1-Frame_Sampling_%2828%29-E4FF77?style=flat-square)
 
 ### Fixed coverage sampling
 
@@ -119,6 +119,7 @@ Bracketed numbers are how many methods each stage lists.
 | --- | --- | :-: | :-: |
 | **Frame-Voyager** | [Frame-Voyager: Learning to Query Frames for Video Large Language Models](https://arxiv.org/abs/2410.03226) | ![venue](https://img.shields.io/badge/ICLR-2025-1f6feb) | — |
 | **GenS** | [Generative Frame Sampler for Long Video Understanding](https://arxiv.org/abs/2503.09146) | ![venue](https://img.shields.io/badge/ACL_2025_Findings-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/yaolinli/GenS.svg?style=social&label=Star)](https://github.com/yaolinli/GenS) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/yaolily/GenS) |
+| **ViaRL** | [ViaRL: Adaptive Temporal Grounding via Visual Iterated Amplification Reinforcement Learning](https://arxiv.org/abs/2505.15447) | ![arXiv](https://img.shields.io/badge/arXiv-2025-b31b1b) | — |
 | **HFS** | [HFS: Holistic Query-Aware Frame Selection for Efficient Video Reasoning](https://arxiv.org/abs/2512.11534) | ![venue](https://img.shields.io/badge/ACM_MM-2026-1f6feb) | — |
 | **RL-FrameSel** | [Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](https://openaccess.thecvf.com/content/CVPR2026/html/Qin_Efficient_Frame_Selection_for_Long_Video_Understanding_via_Reinforcement_Learning_CVPR_2026_paper.html) | ![venue](https://img.shields.io/badge/CVPR-2026-1f6feb) | — |
 | **TSPO** | [TSPO: Temporal Sampling Policy Optimization for Long-form Video Language Understanding](https://arxiv.org/abs/2508.04369) | ![venue](https://img.shields.io/badge/AAAI-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/Hui-design/TSPO.svg?style=social&label=Star)](https://github.com/Hui-design/TSPO) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/hzf666/TSPO-0.4B) |
