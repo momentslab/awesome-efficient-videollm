@@ -16,7 +16,7 @@ Fill in the form and a pull request is opened for you.
 [![Papers](https://img.shields.io/badge/papers-127-informational)](#contents)
 [![Stars](https://img.shields.io/github/stars/momentslab/awesome-efficient-videollm?style=social)](https://github.com/momentslab/awesome-efficient-videollm/stargazers)
 
-<img width="5748" height="2007" alt="Evolution of efficient VideoLLMs" src="https://github.com/user-attachments/assets/8c5f3fa7-dcd4-4554-90ab-471eecd9810e" />
+<img width="5748" height="1885" alt="Evolution of efficient VideoLLMs" src="https://github.com/user-attachments/assets/1550ef6e-b97b-40db-9a19-1c39039b5493" />
 
 </div>
 
