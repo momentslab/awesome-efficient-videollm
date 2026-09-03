@@ -13,7 +13,7 @@ Fill in the form and a pull request is opened for you.
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/momentslab/awesome-efficient-videollm/pulls)
 [![Last Commit](https://img.shields.io/github/last-commit/momentslab/awesome-efficient-videollm?color=orange)](https://github.com/momentslab/awesome-efficient-videollm/commits/main)
-[![Papers](https://img.shields.io/badge/papers-85-informational)](#contents)
+[![Papers](https://img.shields.io/badge/papers-86-informational)](#contents)
 [![Stars](https://img.shields.io/github/stars/momentslab/awesome-efficient-videollm?style=social)](https://github.com/momentslab/awesome-efficient-videollm/stargazers)
 
 <img alt="Evolution of efficient VideoLLMs" src="https://github.com/user-attachments/assets/579de1c4-582b-4cbf-be19-a43339a2aa8f" />
@@ -30,7 +30,7 @@ Fill in the form and a pull request is opened for you.
 The four sections below follow the four cost centers of the encoder–connector–LLM pipeline.
 Bracketed numbers are how many methods each stage lists.
 
-[![Stage 1](https://img.shields.io/badge/1-Frame_Sampling_%2821%29-E4FF77?style=for-the-badge)](#1-frame-sampling)
+[![Stage 1](https://img.shields.io/badge/1-Frame_Sampling_%2822%29-E4FF77?style=for-the-badge)](#1-frame-sampling)
 [![Stage 2](https://img.shields.io/badge/2-Vision_Encoder_%2827%29-FF8934?style=for-the-badge)](#2-vision-encoder)
 [![Stage 3](https://img.shields.io/badge/3-Connector_&_Token_Reduction_%2830%29-6342E8?style=for-the-badge)](#3-connector--token-reduction)
 [![Stage 4](https://img.shields.io/badge/4-LLM--side_Vision_Tokens_%287%29-ADAAFF?style=for-the-badge)](#4-llm-side-vision-tokens)
@@ -70,7 +70,7 @@ Bracketed numbers are how many methods each stage lists.
 
 ## 1. Frame Sampling
 
-![Stage 1](https://img.shields.io/badge/Stage_1-Frame_Sampling_%2821%29-E4FF77?style=flat-square)
+![Stage 1](https://img.shields.io/badge/Stage_1-Frame_Sampling_%2822%29-E4FF77?style=flat-square)
 
 ### Fixed coverage sampling
 
@@ -104,6 +104,7 @@ Bracketed numbers are how many methods each stage lists.
 | **AdaRD-Key** | [AdaRD-key: Adaptive Relevance-Diversity Keyframe Sampling for Long-form Video Understanding](https://arxiv.org/abs/2510.02778) | ![arXiv](https://img.shields.io/badge/arXiv-2025-b31b1b) | [![Star](https://img.shields.io/github/stars/Xian867/AdaRD-Key.svg?style=social&label=Star)](https://github.com/Xian867/AdaRD-Key) |
 | **DyToK** | [Less Is More, but Where? Dynamic Token Compression via LLM-Guided Keyframe Prior](https://arxiv.org/abs/2512.06866) | ![venue](https://img.shields.io/badge/NeurIPS-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/yu-lin-li/DyToK.svg?style=social&label=Star)](https://github.com/yu-lin-li/DyToK) |
 | **BOLT** | [BOLT: Boost Large Vision-Language Model Without Training for Long-form Video Understanding](https://arxiv.org/abs/2503.21483) | ![venue](https://img.shields.io/badge/CVPR-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/sming256/BOLT.svg?style=social&label=Star)](https://github.com/sming256/BOLT) |
+| **CoS** | [CoS: Chain-of-Shot Prompting for Long Video Understanding](https://arxiv.org/abs/2502.06428) | ![arXiv](https://img.shields.io/badge/arXiv-2025-b31b1b) | [![Star](https://img.shields.io/github/stars/lwpyh/CoS_codes.svg?style=social&label=Star)](https://github.com/lwpyh/CoS_codes) |
 | **FOCUS** | [FOCUS: Efficient Keyframe Selection for Long Video Understanding](https://arxiv.org/abs/2510.27280) | ![venue](https://img.shields.io/badge/ICLR-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/NUS-HPC-AI-Lab/FOCUS.svg?style=social&label=Star)](https://github.com/NUS-HPC-AI-Lab/FOCUS) |
 | **Q-Frame** | [Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs](https://arxiv.org/abs/2506.22139) | ![venue](https://img.shields.io/badge/ICCV-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/xiaomi-research/q-frame.svg?style=social&label=Star)](https://github.com/xiaomi-research/q-frame) |
 | **LDDR** | [LDDR: Linear-DPP-Based Dynamic-Resolution Frame Sampling for Video MLLMs](https://arxiv.org/abs/2605.11477) | ![arXiv](https://img.shields.io/badge/arXiv-2026-b31b1b) | [![Star](https://img.shields.io/github/stars/JingfengChen-Jay/LDDR.svg?style=social&label=Star)](https://github.com/JingfengChen-Jay/LDDR) |
