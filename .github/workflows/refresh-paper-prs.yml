@@ -1,0 +1,61 @@
+name: Refresh open paper PRs
+
+# Every paper row is a pure function of (README on main, issue body), and
+# issue_to_row.py normalizes, so any two parallel PRs collide on the
+# paper-count badge. Rather than merge stale diffs, rebuild each open PR's
+# branch from the new main whenever main moves.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: paper-rows
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: python3 scripts/issue_to_row.py --self-test
+      - name: Rebuild each open paper branch on top of main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          branches=$(gh pr list --state open --json headRefName --jq \
+            '.[].headRefName | select(startswith("paper/issue-"))')
+          for br in $branches; do
+            n=${br#paper/issue-}
+            echo "::group::#$n ($br)"
+            git checkout -q -B "$br" origin/main
+            login=$(gh issue view "$n" --json author --jq .author.login)
+            uid=$(gh api "/users/$login" --jq .id)
+            if ! ISSUE_BODY=$(gh issue view "$n" --json body --jq .body) \
+                 python3 scripts/issue_to_row.py; then
+              echo "script failed for #$n, leaving the PR alone"
+              echo "::endgroup::"; continue
+            fi
+            if git diff --quiet README.md; then
+              gh pr close "$br" --comment "This paper is already listed on \`main\`, so this pull request is redundant."
+              gh issue close "$n" --reason completed --comment "This paper is now listed on \`main\`. Thanks."
+              echo "::endgroup::"; continue
+            fi
+            git commit -qam "docs: add paper requested in #$n" \
+              -m "Co-authored-by: $login <$uid+$login@users.noreply.github.com>"
+            git push -qf origin "$br"
+            echo "::endgroup::"
+          done
