@@ -13,7 +13,7 @@ Fill in the form and a pull request is opened for you.
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/momentslab/awesome-efficient-videollm/pulls)
 [![Last Commit](https://img.shields.io/github/last-commit/momentslab/awesome-efficient-videollm?color=orange)](https://github.com/momentslab/awesome-efficient-videollm/commits/main)
-[![Papers](https://img.shields.io/badge/papers-118-informational)](#contents)
+[![Papers](https://img.shields.io/badge/papers-119-informational)](#contents)
 [![Stars](https://img.shields.io/github/stars/momentslab/awesome-efficient-videollm?style=social)](https://github.com/momentslab/awesome-efficient-videollm/stargazers)
 
 <img width="5748" height="2007" alt="Evolution of efficient VideoLLMs" src="https://github.com/user-attachments/assets/8c5f3fa7-dcd4-4554-90ab-471eecd9810e" />
@@ -32,7 +32,7 @@ Bracketed numbers are how many methods each stage lists.
 
 [![Stage 1](https://img.shields.io/badge/1-Frame_Sampling_%2828%29-E4FF77?style=for-the-badge)](#1-frame-sampling)
 [![Stage 2](https://img.shields.io/badge/2-Vision_Encoder_%2827%29-FF8934?style=for-the-badge)](#2-vision-encoder)
-[![Stage 3](https://img.shields.io/badge/3-Connector_&_Token_Reduction_%2854%29-6342E8?style=for-the-badge)](#3-connector--token-reduction)
+[![Stage 3](https://img.shields.io/badge/3-Connector_&_Token_Reduction_%2855%29-6342E8?style=for-the-badge)](#3-connector--token-reduction)
 [![Stage 4](https://img.shields.io/badge/4-LLM--side_Vision_Tokens_%289%29-ADAAFF?style=for-the-badge)](#4-llm-side-vision-tokens)
 
 | Stage | What it controls | Efficiency lever |
@@ -190,7 +190,7 @@ Bracketed numbers are how many methods each stage lists.
 
 ## 3. Connector & Token Reduction
 
-![Stage 3](https://img.shields.io/badge/Stage_3-Connector_&_Token_Reduction_%2854%29-6342E8?style=flat-square)
+![Stage 3](https://img.shields.io/badge/Stage_3-Connector_&_Token_Reduction_%2855%29-6342E8?style=flat-square)
 
 ### Training-free token pruning & merging
 
@@ -229,6 +229,7 @@ Bracketed numbers are how many methods each stage lists.
 | **LLaVA-Mini** | [LLaVA-Mini: Efficient Image and Video Large Multimodal Models with One Vision Token](https://arxiv.org/abs/2501.03895) | ![venue](https://img.shields.io/badge/ICLR-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/ictnlp/LLaVA-Mini.svg?style=social&label=Star)](https://github.com/ictnlp/LLaVA-Mini) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/ICTNLP/llava-mini-llama-3.1-8b) |
 | **VoCo-LLaMA** | [VoCo-LLaMA: Towards Vision Compression with Large Language Models](https://arxiv.org/abs/2406.12275) | ![venue](https://img.shields.io/badge/CVPR-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/Yxxxb/VoCo-LLaMA.svg?style=social&label=Star)](https://github.com/Yxxxb/VoCo-LLaMA) |
 | **Quicksviewer** | [Quicksviewer: An LMM for Efficient Video Understanding via Reinforced Compression of Video Cubes](https://arxiv.org/abs/2504.15270v1) | ![arXiv](https://img.shields.io/badge/arXiv-2025-b31b1b) | [![Star](https://img.shields.io/github/stars/quicksviewer/quicksviewer.svg?style=social&label=Star)](https://github.com/quicksviewer/quicksviewer) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/qijithu/quicksviewer) |
+| **VQToken** | [VQToken: Neural Discrete Token Representation Learning for Extreme Token Reduction in Video Large Language Models](https://arxiv.org/abs/2503.16980) | ![venue](https://img.shields.io/badge/NeurIPS-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/Hai-chao-Zhang/VQToken.svg?style=social&label=Star)](https://github.com/Hai-chao-Zhang/VQToken) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/haichaozhang/VQ-Token-llava-ov-0.5b) |
 
 ### Spatiotemporal pooling & projection
 
