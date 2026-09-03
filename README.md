@@ -30,9 +30,9 @@ Fill in the form and a pull request is opened for you.
 The four sections below follow the four cost centers of the encoder–connector–LLM pipeline.
 Bracketed numbers are how many methods each stage lists.
 
-[![Stage 1](https://img.shields.io/badge/1-Frame_Sampling_%2829%29-E4FF77?style=for-the-badge)](#1-frame-sampling)
+[![Stage 1](https://img.shields.io/badge/1-Frame_Sampling_%2828%29-E4FF77?style=for-the-badge)](#1-frame-sampling)
 [![Stage 2](https://img.shields.io/badge/2-Vision_Encoder_%2827%29-FF8934?style=for-the-badge)](#2-vision-encoder)
-[![Stage 3](https://img.shields.io/badge/3-Connector_&_Token_Reduction_%2852%29-6342E8?style=for-the-badge)](#3-connector--token-reduction)
+[![Stage 3](https://img.shields.io/badge/3-Connector_&_Token_Reduction_%2853%29-6342E8?style=for-the-badge)](#3-connector--token-reduction)
 [![Stage 4](https://img.shields.io/badge/4-LLM--side_Vision_Tokens_%287%29-ADAAFF?style=for-the-badge)](#4-llm-side-vision-tokens)
 
 | Stage | What it controls | Efficiency lever |
@@ -70,7 +70,7 @@ Bracketed numbers are how many methods each stage lists.
 
 ## 1. Frame Sampling
 
-![Stage 1](https://img.shields.io/badge/Stage_1-Frame_Sampling_%2829%29-E4FF77?style=flat-square)
+![Stage 1](https://img.shields.io/badge/Stage_1-Frame_Sampling_%2828%29-E4FF77?style=flat-square)
 
 ### Fixed coverage sampling
 
@@ -102,7 +102,6 @@ Bracketed numbers are how many methods each stage lists.
 | --- | --- | :-: | :-: |
 | **AKS** | [Adaptive Keyframe Sampling for Long Video Understanding](https://arxiv.org/abs/2502.21271) | ![venue](https://img.shields.io/badge/CVPR-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/ncTimTang/AKS.svg?style=social&label=Star)](https://github.com/ncTimTang/AKS) |
 | **AdaRD-Key** | [AdaRD-key: Adaptive Relevance-Diversity Keyframe Sampling for Long-form Video Understanding](https://arxiv.org/abs/2510.02778) | ![arXiv](https://img.shields.io/badge/arXiv-2025-b31b1b) | [![Star](https://img.shields.io/github/stars/Xian867/AdaRD-Key.svg?style=social&label=Star)](https://github.com/Xian867/AdaRD-Key) |
-| **DyToK** | [Less Is More, but Where? Dynamic Token Compression via LLM-Guided Keyframe Prior](https://arxiv.org/abs/2512.06866) | ![venue](https://img.shields.io/badge/NeurIPS-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/yu-lin-li/DyToK.svg?style=social&label=Star)](https://github.com/yu-lin-li/DyToK) |
 | **BOLT** | [BOLT: Boost Large Vision-Language Model Without Training for Long-form Video Understanding](https://arxiv.org/abs/2503.21483) | ![venue](https://img.shields.io/badge/CVPR-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/sming256/BOLT.svg?style=social&label=Star)](https://github.com/sming256/BOLT) |
 | **CoS** | [CoS: Chain-of-Shot Prompting for Long Video Understanding](https://arxiv.org/abs/2502.06428) | ![arXiv](https://img.shields.io/badge/arXiv-2025-b31b1b) | [![Star](https://img.shields.io/github/stars/lwpyh/CoS_codes.svg?style=social&label=Star)](https://github.com/lwpyh/CoS_codes) |
 | **T*** | [T*: Re-thinking Temporal Search for Long-Form Video Understanding](https://arxiv.org/abs/2504.02259) | ![venue](https://img.shields.io/badge/CVPR-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/mll-lab-nu/TStar.svg?style=social&label=Star)](https://github.com/mll-lab-nu/TStar) |
@@ -191,7 +190,7 @@ Bracketed numbers are how many methods each stage lists.
 
 ## 3. Connector & Token Reduction
 
-![Stage 3](https://img.shields.io/badge/Stage_3-Connector_&_Token_Reduction_%2852%29-6342E8?style=flat-square)
+![Stage 3](https://img.shields.io/badge/Stage_3-Connector_&_Token_Reduction_%2853%29-6342E8?style=flat-square)
 
 ### Training-free token pruning & merging
 
@@ -207,6 +206,7 @@ Bracketed numbers are how many methods each stage lists.
 | **STTM** | [Multi-Granular Spatio-Temporal Token Merging for Training-Free Acceleration of Video LLMs](https://arxiv.org/abs/2507.07990) | ![venue](https://img.shields.io/badge/ICCV-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/HYUNJS/STTM.svg?style=social&label=Star)](https://github.com/HYUNJS/STTM) |
 | **LLaVA-Scissor** | [LLaVA-Scissor: Token Compression with Semantic Connected Components for Video LLMs](https://arxiv.org/abs/2506.21862) | ![arXiv](https://img.shields.io/badge/arXiv-2025-b31b1b) | [![Star](https://img.shields.io/github/stars/HumanMLLM/LLaVA-Scissor.svg?style=social&label=Star)](https://github.com/HumanMLLM/LLaVA-Scissor) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/BBBBCHAN/LLaVA-Scissor-baseline-7B) |
 | **VidCom²** | [Video Compression Commander: Plug-and-Play Inference Acceleration for Video Large Language Models](https://arxiv.org/abs/2505.14454) | ![venue](https://img.shields.io/badge/EMNLP-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/xuyang-liu16/VidCom2.svg?style=social&label=Star)](https://github.com/xuyang-liu16/VidCom2) |
+| **DyToK** | [Less Is More, but Where? Dynamic Token Compression via LLM-Guided Keyframe Prior](https://arxiv.org/abs/2512.06866) | ![venue](https://img.shields.io/badge/NeurIPS-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/yu-lin-li/DyToK.svg?style=social&label=Star)](https://github.com/yu-lin-li/DyToK) |
 | **EchoPrune** | [EchoPrune: Interpreting Redundancy as Temporal Echoes for Efficient VideoLLMs](https://arxiv.org/abs/2605.10050) | ![arXiv](https://img.shields.io/badge/arXiv-2026-b31b1b) | — |
 | **FlashVID** | [FlashVID: Efficient Video Large Language Models via Training-free Tree-based Spatiotemporal Token Merging](https://arxiv.org/abs/2602.08024) | ![venue](https://img.shields.io/badge/ICLR-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/Fanziyang-v/FlashVID.svg?style=social&label=Star)](https://github.com/Fanziyang-v/FlashVID) |
 | **KTV** | [KTV: Keyframes and Key Tokens Selection for Efficient Training-Free Video LLMs](https://arxiv.org/abs/2602.03615) | ![venue](https://img.shields.io/badge/AAAI-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/hktk07/KTV.svg?style=social&label=Star)](https://github.com/hktk07/KTV) |
