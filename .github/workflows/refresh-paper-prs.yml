@@ -76,13 +76,24 @@ jobs:
               fi
               echo "::endgroup::"; continue
             fi
+            echo "$out"
             if git diff --quiet README.md; then
               gh pr close "$br" --comment "This paper is already listed on \`main\`, so this pull request is redundant."
               gh issue close "$n" --reason completed --comment "This paper is now listed on \`main\`. Thanks."
+              echo "closed #$n and its PR: already listed on main"
+              echo "::endgroup::"; continue
+            fi
+            # Skip the push when the rebuilt row is byte-identical to what the
+            # branch already has, so an unrelated push to main does not churn
+            # every open PR with a no-op commit.
+            if git fetch -q origin "$br" &&
+               git show FETCH_HEAD:README.md | diff -q - README.md >/dev/null 2>&1; then
+              echo "already up to date, not pushing"
               echo "::endgroup::"; continue
             fi
             git commit -qam "docs: add paper requested in #$n" \
               -m "Co-authored-by: $login <$uid+$login@users.noreply.github.com>"
             git push -qf origin "$br"
+            echo "rebuilt and force-pushed $br"
             echo "::endgroup::"
           done
