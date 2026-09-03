@@ -111,6 +111,7 @@ Bracketed numbers are how many methods each stage lists.
 | **LDDR** | [LDDR: Linear-DPP-Based Dynamic-Resolution Frame Sampling for Video MLLMs](https://arxiv.org/abs/2605.11477) | ![arXiv](https://img.shields.io/badge/arXiv-2026-b31b1b) | [![Star](https://img.shields.io/github/stars/JingfengChen-Jay/LDDR.svg?style=social&label=Star)](https://github.com/JingfengChen-Jay/LDDR) |
 | **QCA** | [QCA: Query- and Content-Aware Keyframe Selection for Long Video Understanding](https://arxiv.org/abs/2607.00983) | ![venue](https://img.shields.io/badge/ECCV-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/hktk07/QCA.svg?style=social&label=Star)](https://github.com/hktk07/QCA) |
 | **GIFT** | [GIFT: Global Irreplaceability Frame Targeting for Efficient Video Understanding](https://arxiv.org/abs/2603.25072) | ![venue](https://img.shields.io/badge/CVPR-2026-1f6feb) | — |
+| **EFS** | [Event-Anchored Frame Selection for Effective Long-Video Understanding](https://arxiv.org/abs/2603.00983) | ![arXiv](https://img.shields.io/badge/arXiv-2026-b31b1b) | — |
 
 ### Learned / generative query-conditioned
 
