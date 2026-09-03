@@ -13,7 +13,7 @@ Fill in the form and a pull request is opened for you.
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/momentslab/awesome-efficient-videollm/pulls)
 [![Last Commit](https://img.shields.io/github/last-commit/momentslab/awesome-efficient-videollm?color=orange)](https://github.com/momentslab/awesome-efficient-videollm/commits/main)
-[![Papers](https://img.shields.io/badge/papers-122-informational)](#contents)
+[![Papers](https://img.shields.io/badge/papers-123-informational)](#contents)
 [![Stars](https://img.shields.io/github/stars/momentslab/awesome-efficient-videollm?style=social)](https://github.com/momentslab/awesome-efficient-videollm/stargazers)
 
 <img width="5748" height="2007" alt="Evolution of efficient VideoLLMs" src="https://github.com/user-attachments/assets/8c5f3fa7-dcd4-4554-90ab-471eecd9810e" />
@@ -33,7 +33,7 @@ Bracketed numbers are how many methods each stage lists.
 [![Stage 1](https://img.shields.io/badge/1-Frame_Sampling_%2828%29-E4FF77?style=for-the-badge)](#1-frame-sampling)
 [![Stage 2](https://img.shields.io/badge/2-Vision_Encoder_%2827%29-FF8934?style=for-the-badge)](#2-vision-encoder)
 [![Stage 3](https://img.shields.io/badge/3-Connector_&_Token_Reduction_%2855%29-6342E8?style=for-the-badge)](#3-connector--token-reduction)
-[![Stage 4](https://img.shields.io/badge/4-LLM--side_Vision_Tokens_%2812%29-ADAAFF?style=for-the-badge)](#4-llm-side-vision-tokens)
+[![Stage 4](https://img.shields.io/badge/4-LLM--side_Vision_Tokens_%2813%29-ADAAFF?style=for-the-badge)](#4-llm-side-vision-tokens)
 
 | Stage | What it controls | Efficiency lever |
 | :-- | :-- | :-- |
@@ -275,7 +275,7 @@ Bracketed numbers are how many methods each stage lists.
 
 ## 4. LLM-side Vision Tokens
 
-![Stage 4](https://img.shields.io/badge/Stage_4-LLM--side_Vision_Tokens_%2812%29-ADAAFF?style=flat-square)
+![Stage 4](https://img.shields.io/badge/Stage_4-LLM--side_Vision_Tokens_%2813%29-ADAAFF?style=flat-square)
 
 ### Decoder-layer pruning & sparse prefill
 
@@ -303,6 +303,7 @@ Bracketed numbers are how many methods each stage lists.
 
 | Method | Title | Venue | Code & Weights |
 | --- | --- | :-: | :-: |
+| **InfiniPot-V** | [InfiniPot-V: Memory-Constrained KV Cache Compression for Streaming Video Understanding](https://arxiv.org/abs/2506.15745) | ![venue](https://img.shields.io/badge/NeurIPS-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/aiha-lab/InfiniPot-V.svg?style=social&label=Star)](https://github.com/aiha-lab/InfiniPot-V) |
 
 ## Contributing
 
