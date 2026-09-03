@@ -13,7 +13,7 @@ Fill in the form and a pull request is opened for you.
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/momentslab/awesome-efficient-videollm/pulls)
 [![Last Commit](https://img.shields.io/github/last-commit/momentslab/awesome-efficient-videollm?color=orange)](https://github.com/momentslab/awesome-efficient-videollm/commits/main)
-[![Papers](https://img.shields.io/badge/papers-108-informational)](#contents)
+[![Papers](https://img.shields.io/badge/papers-109-informational)](#contents)
 [![Stars](https://img.shields.io/github/stars/momentslab/awesome-efficient-videollm?style=social)](https://github.com/momentslab/awesome-efficient-videollm/stargazers)
 
 <img alt="Evolution of efficient VideoLLMs" src="https://github.com/user-attachments/assets/579de1c4-582b-4cbf-be19-a43339a2aa8f" />
@@ -32,7 +32,7 @@ Bracketed numbers are how many methods each stage lists.
 
 [![Stage 1](https://img.shields.io/badge/1-Frame_Sampling_%2829%29-E4FF77?style=for-the-badge)](#1-frame-sampling)
 [![Stage 2](https://img.shields.io/badge/2-Vision_Encoder_%2827%29-FF8934?style=for-the-badge)](#2-vision-encoder)
-[![Stage 3](https://img.shields.io/badge/3-Connector_&_Token_Reduction_%2845%29-6342E8?style=for-the-badge)](#3-connector--token-reduction)
+[![Stage 3](https://img.shields.io/badge/3-Connector_&_Token_Reduction_%2846%29-6342E8?style=for-the-badge)](#3-connector--token-reduction)
 [![Stage 4](https://img.shields.io/badge/4-LLM--side_Vision_Tokens_%287%29-ADAAFF?style=for-the-badge)](#4-llm-side-vision-tokens)
 
 | Stage | What it controls | Efficiency lever |
@@ -191,7 +191,7 @@ Bracketed numbers are how many methods each stage lists.
 
 ## 3. Connector & Token Reduction
 
-![Stage 3](https://img.shields.io/badge/Stage_3-Connector_&_Token_Reduction_%2845%29-6342E8?style=flat-square)
+![Stage 3](https://img.shields.io/badge/Stage_3-Connector_&_Token_Reduction_%2846%29-6342E8?style=flat-square)
 
 ### Training-free token pruning & merging
 
@@ -237,6 +237,7 @@ Bracketed numbers are how many methods each stage lists.
 | **PLLaVA** | [PLLaVA : Parameter-free LLaVA Extension from Images to Videos for Video Dense Captioning](https://arxiv.org/abs/2404.16994) | ![arXiv](https://img.shields.io/badge/arXiv-2024-b31b1b) | [![Star](https://img.shields.io/github/stars/magic-research/PLLaVA.svg?style=social&label=Star)](https://github.com/magic-research/PLLaVA) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/ermu2001/pllava-7b) |
 | **SF-LLaVA** | [SlowFast-LLaVA: A Strong Training-Free Baseline for Video Large Language Models](https://arxiv.org/abs/2407.15841) | ![arXiv](https://img.shields.io/badge/arXiv-2024-b31b1b) | [![Star](https://img.shields.io/github/stars/apple/ml-slowfast-llava.svg?style=social&label=Star)](https://github.com/apple/ml-slowfast-llava) |
 | **VideoLLaMA 2 (STC)** | [VideoLLaMA 2: Advancing Spatial-Temporal Modeling and Audio Understanding in Video-LLMs](https://arxiv.org/abs/2406.07476) | ![arXiv](https://img.shields.io/badge/arXiv-2024-b31b1b) | [![Star](https://img.shields.io/github/stars/DAMO-NLP-SG/VideoLLaMA2.svg?style=social&label=Star)](https://github.com/DAMO-NLP-SG/VideoLLaMA2) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/collections/DAMO-NLP-SG/videollama2) |
+| **TS-LLaVA** | [TS-LLaVA: Constructing Visual Tokens through Thumbnail-and-Sampling for Training-Free Video Large Language Models](https://arxiv.org/abs/2411.11066) | ![arXiv](https://img.shields.io/badge/arXiv-2024-b31b1b) | [![Star](https://img.shields.io/github/stars/tingyu215/TS-LLaVA.svg?style=social&label=Star)](https://github.com/tingyu215/TS-LLaVA) |
 | **InternVL2.5 pixel-shuffle** | [Expanding Performance Boundaries of Open-Source Multimodal Models with Model, Data, and Test-Time Scaling](https://arxiv.org/abs/2412.05271) | ![arXiv](https://img.shields.io/badge/arXiv-2025-b31b1b) | [![Star](https://img.shields.io/github/stars/OpenGVLab/InternVL.svg?style=social&label=Star)](https://github.com/OpenGVLab/InternVL) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/OpenGVLab/InternVL2_5-8B) |
 | **STORM** | [STORM: Token-Efficient Long Video Understanding for Multimodal LLMs](https://arxiv.org/abs/2503.04130) | ![venue](https://img.shields.io/badge/ICCV_2025_Workshop-2025-1f6feb) | — |
 | **NVILA** | [NVILA: Efficient Frontier Visual Language Models](https://arxiv.org/abs/2412.04468) | ![venue](https://img.shields.io/badge/CVPR-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/NVlabs/VILA.svg?style=social&label=Star)](https://github.com/NVlabs/VILA) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/collections/Efficient-Large-Model/nvila) |
