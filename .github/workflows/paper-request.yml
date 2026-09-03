@@ -29,7 +29,9 @@ jobs:
         run: |
           open=$(gh pr list --head "paper/issue-$NUMBER" --state open --json number --jq 'length')
           echo "exists=$open" >> "$GITHUB_OUTPUT"
-          [ "$open" = "0" ] || echo "PR for #$NUMBER already open, nothing to do"
+          # A stale PR is not this workflow's problem: refresh-paper-prs.yml
+          # rebuilds it from the current issue body on issues.edited.
+          [ "$open" = "0" ] || echo "PR for #$NUMBER already open; edits are handled by Refresh open paper PRs"
       - name: Check for a duplicate or add the row
         if: steps.guard.outputs.exists == '0'
         id: add
