@@ -135,7 +135,7 @@ def self_test():
     readme = open("README.md").read()
     duplicate = find_duplicate(readme, {
         "paper": "https://arxiv.org/pdf/2403.06764v9.pdf", "title": "different title"})
-    assert duplicate == ("FastV", "4. Decoder-layer token pruning & merging"), duplicate
+    assert duplicate == ("FastV", "4. Decoder-layer pruning & sparse prefill"), duplicate
     assert paper_key("https://arxiv.org/html/2403.06764v2") == "arxiv:2403.06764"
     assert paper_key("https://dx.doi.org/10.1007/ABC/?from=issue") == \
            paper_key("https://doi.org/10.1007/abc")
@@ -143,7 +143,7 @@ def self_test():
         "paper": "https://example.org/fastv",
         "title": "AN IMAGE IS WORTH 1/2 TOKENS AFTER LAYER 2 — PLUG-AND-PLAY INFERENCE "
                  "ACCELERATION FOR LARGE VISION-LANGUAGE MODELS"})
-    assert duplicate == ("FastV", "4. Decoder-layer token pruning & merging"), duplicate
+    assert duplicate == ("FastV", "4. Decoder-layer pruning & sparse prefill"), duplicate
     assert find_duplicate(readme, f) is None, "unrelated paper reported as duplicate"
     evil = parse("### Abbreviation\n\na | b `x` [y](z)\n\n### Paper link\n\njavascript:alert(1)\n")
     assert clean(evil["abbrev"]) == "a / b x y(z)", clean(evil["abbrev"])  # link defused

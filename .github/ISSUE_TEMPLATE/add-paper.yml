@@ -79,9 +79,10 @@ body:
         - 3. Query- / budget-based resampling
         - 3. Spatiotemporal pooling & projection
         - 3. Streaming / memory compression
-        - 3. Audio & audio-visual token compression
-        - 4. Decoder-layer token pruning & merging
+        - 3. Audio & audiovisual token compression
+        - 4. Decoder-layer pruning & sparse prefill
         - 4. Visual KV-cache compression
+        - 4. Streaming / bounded-memory KV
     validations:
       required: true
   - type: textarea

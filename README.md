@@ -62,10 +62,11 @@ Bracketed numbers are how many methods each stage lists.
   - [Query- / budget-based resampling](#query---budget-based-resampling)
   - [Spatiotemporal pooling & projection](#spatiotemporal-pooling--projection)
   - [Streaming / memory compression](#streaming--memory-compression)
-  - [Audio & audio-visual token compression](#audio--audio-visual-token-compression)
+  - [Audio & audiovisual token compression](#audio--audiovisual-token-compression)
 - [4. LLM-side Vision Tokens](#4-llm-side-vision-tokens)
-  - [Decoder-layer token pruning & merging](#decoder-layer-token-pruning--merging)
+  - [Decoder-layer pruning & sparse prefill](#decoder-layer-pruning--sparse-prefill)
   - [Visual KV-cache compression](#visual-kv-cache-compression)
+  - [Streaming / bounded-memory KV](#streaming--bounded-memory-kv)
 
 ## 1. Frame Sampling
 
@@ -227,7 +228,7 @@ Bracketed numbers are how many methods each stage lists.
 | **∞-Video** | [∞-Video: A Training-Free Approach to Long Video Understanding via Continuous-Time Memory Consolidation](https://arxiv.org/abs/2501.19098v2) | ![venue](https://img.shields.io/badge/ICML-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/deep-spin/Infinite-Video.svg?style=social&label=Star)](https://github.com/deep-spin/Infinite-Video) |
 | **StreamingTOM** | [StreamingTOM: Streaming Token Compression for Efficient Video Understanding](https://arxiv.org/abs/2510.18269) | ![venue](https://img.shields.io/badge/CVPR-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/YIGE24/StreamingTOM.svg?style=social&label=Star)](https://github.com/YIGE24/StreamingTOM) |
 
-### Audio & audio-visual token compression
+### Audio & audiovisual token compression
 
 | Method | Title | Venue | Code & Weights |
 | --- | --- | :-: | :-: |
@@ -244,7 +245,7 @@ Bracketed numbers are how many methods each stage lists.
 
 ![Stage 4](https://img.shields.io/badge/Stage_4-LLM--side_Vision_Tokens_%287%29-ADAAFF?style=flat-square)
 
-### Decoder-layer token pruning & merging
+### Decoder-layer pruning & sparse prefill
 
 | Method | Title | Venue | Code & Weights |
 | --- | --- | :-: | :-: |
@@ -260,6 +261,11 @@ Bracketed numbers are how many methods each stage lists.
 | --- | --- | :-: | :-: |
 | **DyCoke** | [DyCoke: Dynamic Compression of Tokens for Fast Video Large Language Models](https://arxiv.org/abs/2411.15024) | ![venue](https://img.shields.io/badge/CVPR-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/KD-TAO/DyCoke.svg?style=social&label=Star)](https://github.com/KD-TAO/DyCoke) |
 | **VidKV** | [Plug-and-Play 1.x-Bit KV Cache Quantization for Video Large Language Models](https://arxiv.org/abs/2503.16257) | ![arXiv](https://img.shields.io/badge/arXiv-2025-b31b1b) | [![Star](https://img.shields.io/github/stars/KD-TAO/VidKV.svg?style=social&label=Star)](https://github.com/KD-TAO/VidKV) |
+
+### Streaming / bounded-memory KV
+
+| Method | Title | Venue | Code & Weights |
+| --- | --- | :-: | :-: |
 
 ## Contributing
 
