@@ -2,7 +2,9 @@ name: Paper request
 
 on:
   issues:
-    types: [opened]
+    # reopened/edited are the retry gestures: a submission that failed its
+    # checks is fixed by editing it, or re-run by closing and reopening.
+    types: [opened, reopened, edited]
 
 permissions:
   contents: write
@@ -88,6 +90,6 @@ jobs:
             echo "${SUMMARY:-the row builder failed, see the workflow run for details}"
             echo '```'
             echo
-            echo "Edit the issue to correct it, then a maintainer can re-run the workflow."
+            echo "Edit this issue to correct it and the check runs again automatically."
           } > comment.md
           gh issue comment "$NUMBER" --body-file comment.md
