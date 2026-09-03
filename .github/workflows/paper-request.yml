@@ -33,7 +33,22 @@ jobs:
         id: add
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}   # untrusted: passed as env, never inlined
-        run: echo "summary=$(python3 scripts/issue_to_row.py)" >> "$GITHUB_OUTPUT"
+        run: |
+          # Exit code carries the verdict: 0 added, 3 already listed, other = broken
+          # submission. Never infer "duplicate" from an unchanged README -- a failing
+          # script leaves it unchanged too, and that silently closed #74 as a duplicate.
+          set +e
+          summary=$(python3 scripts/issue_to_row.py 2>&1)
+          code=$?
+          set -e
+          echo "$summary"
+          {
+            echo "verdict=$code"
+            echo "summary<<EOF_SUMMARY"
+            echo "$summary"
+            echo "EOF_SUMMARY"
+          } >> "$GITHUB_OUTPUT"
+          [ "$code" -eq 0 ] || [ "$code" -eq 3 ]
       - name: Open the pull request or close a duplicate
         if: steps.guard.outputs.exists == '0'
         env:
@@ -41,10 +56,11 @@ jobs:
           NUMBER: ${{ github.event.issue.number }}
           TITLE: ${{ github.event.issue.title }}
           SUMMARY: ${{ steps.add.outputs.summary }}
+          VERDICT: ${{ steps.add.outputs.verdict }}
           AUTHOR_LOGIN: ${{ github.event.issue.user.login }}
           AUTHOR_ID: ${{ github.event.issue.user.id }}
         run: |
-          if git diff --quiet README.md; then
+          if [ "$VERDICT" = "3" ]; then
             gh issue close "$NUMBER" --reason duplicate --comment "$SUMMARY"
             exit 0
           fi
@@ -57,3 +73,21 @@ jobs:
           gh pr create --title "$TITLE" \
             --body "$SUMMARY"$'\n\n'"Opened automatically from #$NUMBER. Closes #$NUMBER."
           gh issue comment "$NUMBER" --body "Thanks. A pull request with this row is open, so there is nothing else to do from your side."
+
+      - name: Report a broken submission on the issue
+        if: failure() && steps.add.conclusion == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.issue.number }}
+          SUMMARY: ${{ steps.add.outputs.summary }}
+        run: |
+          {
+            echo "Thanks for the submission. It could not be added automatically:"
+            echo
+            echo '```'
+            echo "${SUMMARY:-the row builder failed, see the workflow run for details}"
+            echo '```'
+            echo
+            echo "Edit the issue to correct it, then a maintainer can re-run the workflow."
+          } > comment.md
+          gh issue comment "$NUMBER" --body-file comment.md

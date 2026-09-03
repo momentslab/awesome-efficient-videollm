@@ -18,6 +18,7 @@ FIELDS = {"abbreviation": "abbrev", "paper title": "title", "paper link": "paper
           "venue": "venue", "year": "year", "code link": "code",
           "weights link": "weights", "where does it belong?": "section"}
 URL_OK = re.compile(r"https://[\w.-]+/[\w./#?=&%+~-]*$")
+DUPLICATE = 3   # exit code: the paper is already listed (not an error)
 
 
 def parse(body):
@@ -40,6 +41,8 @@ def clean(value, limit=300):
 
 def url(value, field):
     value = value.strip()
+    if value.startswith("http://"):        # contributors paste these; https is served anyway
+        value = "https://" + value[len("http://"):]
     if not URL_OK.fullmatch(value):
         sys.exit(f"error: {field} must be a plain https URL, got: {value[:80]!r}")
     return value
@@ -145,6 +148,8 @@ def self_test():
                  "ACCELERATION FOR LARGE VISION-LANGUAGE MODELS"})
     assert duplicate == ("FastV", "4. Decoder-layer pruning & sparse prefill"), duplicate
     assert find_duplicate(readme, f) is None, "unrelated paper reported as duplicate"
+    assert url("http://arxiv.org/abs/2504.17343", "paper link") == \
+           "https://arxiv.org/abs/2504.17343", "http link not upgraded"
     evil = parse("### Abbreviation\n\na | b `x` [y](z)\n\n### Paper link\n\njavascript:alert(1)\n")
     assert clean(evil["abbrev"]) == "a / b x y(z)", clean(evil["abbrev"])  # link defused
     try:
@@ -169,7 +174,7 @@ if __name__ == "__main__":
         method, section = duplicate
         print(f"Thanks. This paper is already listed as **{method}** under **{section}**, "
               "so I am closing this request.")
-        sys.exit(0)
+        sys.exit(DUPLICATE)
     readme = insert(readme, fields["section"], build_row(fields))
     open("README.md", "w").write(N.normalize(readme))
     print(f"Added **{clean(fields['abbrev'], 60)}** to _{clean(fields['section'], 80)}_.")
