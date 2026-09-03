@@ -121,6 +121,7 @@ Bracketed numbers are how many methods each stage lists.
 | **GenS** | [Generative Frame Sampler for Long Video Understanding](https://arxiv.org/abs/2503.09146) | ![venue](https://img.shields.io/badge/ACL_2025_Findings-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/yaolinli/GenS.svg?style=social&label=Star)](https://github.com/yaolinli/GenS) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/yaolily/GenS) |
 | **HFS** | [HFS: Holistic Query-Aware Frame Selection for Efficient Video Reasoning](https://arxiv.org/abs/2512.11534) | ![venue](https://img.shields.io/badge/ACM_MM-2026-1f6feb) | — |
 | **RL-FrameSel** | [Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](https://openaccess.thecvf.com/content/CVPR2026/html/Qin_Efficient_Frame_Selection_for_Long_Video_Understanding_via_Reinforcement_Learning_CVPR_2026_paper.html) | ![venue](https://img.shields.io/badge/CVPR-2026-1f6feb) | — |
+| **TSPO** | [TSPO: Temporal Sampling Policy Optimization for Long-form Video Language Understanding](https://arxiv.org/abs/2508.04369) | ![venue](https://img.shields.io/badge/AAAI-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/Hui-design/TSPO.svg?style=social&label=Star)](https://github.com/Hui-design/TSPO) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/hzf666/TSPO-0.4B) |
 
 
 ## 2. Vision Encoder
