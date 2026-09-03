@@ -13,7 +13,7 @@ Fill in the form and a pull request is opened for you.
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/momentslab/awesome-efficient-videollm/pulls)
 [![Last Commit](https://img.shields.io/github/last-commit/momentslab/awesome-efficient-videollm?color=orange)](https://github.com/momentslab/awesome-efficient-videollm/commits/main)
-[![Papers](https://img.shields.io/badge/papers-119-informational)](#contents)
+[![Papers](https://img.shields.io/badge/papers-120-informational)](#contents)
 [![Stars](https://img.shields.io/github/stars/momentslab/awesome-efficient-videollm?style=social)](https://github.com/momentslab/awesome-efficient-videollm/stargazers)
 
 <img width="5748" height="2007" alt="Evolution of efficient VideoLLMs" src="https://github.com/user-attachments/assets/8c5f3fa7-dcd4-4554-90ab-471eecd9810e" />
@@ -33,7 +33,7 @@ Bracketed numbers are how many methods each stage lists.
 [![Stage 1](https://img.shields.io/badge/1-Frame_Sampling_%2828%29-E4FF77?style=for-the-badge)](#1-frame-sampling)
 [![Stage 2](https://img.shields.io/badge/2-Vision_Encoder_%2827%29-FF8934?style=for-the-badge)](#2-vision-encoder)
 [![Stage 3](https://img.shields.io/badge/3-Connector_&_Token_Reduction_%2855%29-6342E8?style=for-the-badge)](#3-connector--token-reduction)
-[![Stage 4](https://img.shields.io/badge/4-LLM--side_Vision_Tokens_%289%29-ADAAFF?style=for-the-badge)](#4-llm-side-vision-tokens)
+[![Stage 4](https://img.shields.io/badge/4-LLM--side_Vision_Tokens_%2810%29-ADAAFF?style=for-the-badge)](#4-llm-side-vision-tokens)
 
 | Stage | What it controls | Efficiency lever |
 | :-- | :-- | :-- |
@@ -275,7 +275,7 @@ Bracketed numbers are how many methods each stage lists.
 
 ## 4. LLM-side Vision Tokens
 
-![Stage 4](https://img.shields.io/badge/Stage_4-LLM--side_Vision_Tokens_%289%29-ADAAFF?style=flat-square)
+![Stage 4](https://img.shields.io/badge/Stage_4-LLM--side_Vision_Tokens_%2810%29-ADAAFF?style=flat-square)
 
 ### Decoder-layer pruning & sparse prefill
 
@@ -286,6 +286,7 @@ Bracketed numbers are how many methods each stage lists.
 | **SparseVLM** | [SparseVLM: Visual Token Sparsification for Efficient Vision-Language Model Inference](https://arxiv.org/abs/2410.04417) | ![venue](https://img.shields.io/badge/ICML-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/Gumpest/SparseVLMs.svg?style=social&label=Star)](https://github.com/Gumpest/SparseVLMs) |
 | **FlexSelect** | [FlexSelect: Flexible Token Selection for Efficient Long Video Understanding](https://arxiv.org/abs/2506.00993) | ![venue](https://img.shields.io/badge/NeurIPS-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/yunzhuzhang0918/flexselect.svg?style=social&label=Star)](https://github.com/yunzhuzhang0918/flexselect) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/yunzhuyunzhu) |
 | **AdaTP** | [AdaTP: Attention-Debiased Token Pruning for Video Large Language Models](https://arxiv.org/abs/2505.20100) | ![venue](https://img.shields.io/badge/EMNLP-2025-1f6feb) | — |
+| **MMInference** | [MMInference: Accelerating Pre-filling for Long-Context VLMs via Modality-Aware Permutation Sparse Attention](https://arxiv.org/abs/2504.16083v1) | ![venue](https://img.shields.io/badge/ICML-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/microsoft/MInference.svg?style=social&label=Star)](https://github.com/microsoft/MInference/) |
 | **HieraVid** | [HieraVid: Hierarchical Token Pruning for Fast Video Large Language Models](https://arxiv.org/abs/2604.01881) | ![arXiv](https://img.shields.io/badge/arXiv-2026-b31b1b) | — |
 | **StatefulTR** | [Stateful Token Reduction for Long-Video Hybrid VLMs](https://arxiv.org/abs/2603.00198) | ![arXiv](https://img.shields.io/badge/arXiv-2026-b31b1b) | — |
 
