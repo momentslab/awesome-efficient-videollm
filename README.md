@@ -13,7 +13,7 @@ Fill in the form and a pull request is opened for you.
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/momentslab/awesome-efficient-videollm/pulls)
 [![Last Commit](https://img.shields.io/github/last-commit/momentslab/awesome-efficient-videollm?color=orange)](https://github.com/momentslab/awesome-efficient-videollm/commits/main)
-[![Papers](https://img.shields.io/badge/papers-109-informational)](#contents)
+[![Papers](https://img.shields.io/badge/papers-111-informational)](#contents)
 [![Stars](https://img.shields.io/github/stars/momentslab/awesome-efficient-videollm?style=social)](https://github.com/momentslab/awesome-efficient-videollm/stargazers)
 
 <img alt="Evolution of efficient VideoLLMs" src="https://github.com/user-attachments/assets/579de1c4-582b-4cbf-be19-a43339a2aa8f" />
@@ -32,7 +32,7 @@ Bracketed numbers are how many methods each stage lists.
 
 [![Stage 1](https://img.shields.io/badge/1-Frame_Sampling_%2829%29-E4FF77?style=for-the-badge)](#1-frame-sampling)
 [![Stage 2](https://img.shields.io/badge/2-Vision_Encoder_%2827%29-FF8934?style=for-the-badge)](#2-vision-encoder)
-[![Stage 3](https://img.shields.io/badge/3-Connector_&_Token_Reduction_%2846%29-6342E8?style=for-the-badge)](#3-connector--token-reduction)
+[![Stage 3](https://img.shields.io/badge/3-Connector_&_Token_Reduction_%2848%29-6342E8?style=for-the-badge)](#3-connector--token-reduction)
 [![Stage 4](https://img.shields.io/badge/4-LLM--side_Vision_Tokens_%287%29-ADAAFF?style=for-the-badge)](#4-llm-side-vision-tokens)
 
 | Stage | What it controls | Efficiency lever |
@@ -191,7 +191,7 @@ Bracketed numbers are how many methods each stage lists.
 
 ## 3. Connector & Token Reduction
 
-![Stage 3](https://img.shields.io/badge/Stage_3-Connector_&_Token_Reduction_%2846%29-6342E8?style=flat-square)
+![Stage 3](https://img.shields.io/badge/Stage_3-Connector_&_Token_Reduction_%2848%29-6342E8?style=flat-square)
 
 ### Training-free token pruning & merging
 
@@ -251,6 +251,7 @@ Bracketed numbers are how many methods each stage lists.
 | **MA-LMM** | [MA-LMM: Memory-Augmented Large Multimodal Model for Long-Term Video Understanding](https://arxiv.org/abs/2404.05726) | ![venue](https://img.shields.io/badge/CVPR-2024-1f6feb) | [![Star](https://img.shields.io/github/stars/boheumd/MA-LMM.svg?style=social&label=Star)](https://github.com/boheumd/MA-LMM) |
 | **MovieChat** | [MovieChat: From Dense Token to Sparse Memory for Long Video Understanding](https://arxiv.org/abs/2307.16449) | ![venue](https://img.shields.io/badge/CVPR-2024-1f6feb) | [![Star](https://img.shields.io/github/stars/rese1f/MovieChat.svg?style=social&label=Star)](https://github.com/rese1f/MovieChat) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/lmms-lab/MovieChat-ckpt) |
 | **∞-Video** | [∞-Video: A Training-Free Approach to Long Video Understanding via Continuous-Time Memory Consolidation](https://arxiv.org/abs/2501.19098v2) | ![venue](https://img.shields.io/badge/ICML-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/deep-spin/Infinite-Video.svg?style=social&label=Star)](https://github.com/deep-spin/Infinite-Video) |
+| **Flash-VStream** | [Flash-VStream: Efficient Real-Time Understanding for Long Video Streams](https://arxiv.org/abs/2506.23825) | ![venue](https://img.shields.io/badge/ICCV-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/IVGSZ/Flash-VStream.svg?style=social&label=Star)](https://github.com/IVGSZ/Flash-VStream) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/zhang9302002/Flash-VStream-Qwen-7b) |
 | **StreamingTOM** | [StreamingTOM: Streaming Token Compression for Efficient Video Understanding](https://arxiv.org/abs/2510.18269) | ![venue](https://img.shields.io/badge/CVPR-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/YIGE24/StreamingTOM.svg?style=social&label=Star)](https://github.com/YIGE24/StreamingTOM) |
 
 ### Audio & audiovisual token compression
