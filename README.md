@@ -13,7 +13,7 @@ Fill in the form and a pull request is opened for you.
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/momentslab/awesome-efficient-videollm/pulls)
 [![Last Commit](https://img.shields.io/github/last-commit/momentslab/awesome-efficient-videollm?color=orange)](https://github.com/momentslab/awesome-efficient-videollm/commits/main)
-[![Papers](https://img.shields.io/badge/papers-125-informational)](#contents)
+[![Papers](https://img.shields.io/badge/papers-124-informational)](#contents)
 [![Stars](https://img.shields.io/github/stars/momentslab/awesome-efficient-videollm?style=social)](https://github.com/momentslab/awesome-efficient-videollm/stargazers)
 
 <img alt="Chronology of the listed methods, colored by the stage at which each reduces cost" src="assets/timeline.png" />
@@ -31,10 +31,10 @@ The four sections follow the encoder–connector–LLM pipeline. A method belong
 whose computation it removes, and a method that reduces cost at several stages is listed under
 each of them, with a chip linking its rows. Bracketed numbers count papers per stage.
 
-[![Stage 1](https://img.shields.io/badge/1-Input_Construction_and_Selection_%2830%29-E4FF77?style=for-the-badge)](#1-input-construction-and-selection)
-[![Stage 2](https://img.shields.io/badge/2-Encoder_Computation_%2826%29-FF8934?style=for-the-badge)](#2-encoder-computation)
-[![Stage 3](https://img.shields.io/badge/3-Encoded_Representations_and_Connector_%2859%29-6342E8?style=for-the-badge)](#3-encoded-representations-and-connector)
-[![Stage 4](https://img.shields.io/badge/4-LLM_Execution_and_State_%2827%29-ADAAFF?style=for-the-badge)](#4-llm-execution-and-state)
+[![Stage 1](https://img.shields.io/badge/1-Input_construction_and_selection_%2830%29-E4FF77?style=for-the-badge)](#1-input-construction-and-selection)
+[![Stage 2](https://img.shields.io/badge/2-Encoder_computation_%2826%29-FF8934?style=for-the-badge)](#2-encoder-computation)
+[![Stage 3](https://img.shields.io/badge/3-Encoded_representations_and_connector_%2858%29-6342E8?style=for-the-badge)](#3-encoded-representations-and-connector)
+[![Stage 4](https://img.shields.io/badge/4-LLM_execution_and_state_%2826%29-ADAAFF?style=for-the-badge)](#4-llm-execution-and-state)
 
 | Stage | What it controls | Efficiency lever |
 | :-- | :-- | :-- |
@@ -45,28 +45,28 @@ each of them, with a chip linking its rows. Bracketed numbers count papers per s
 
 ## Contents
 
-- [1. Input Construction and Selection](#1-input-construction-and-selection)
+- [1. Input construction and selection](#1-input-construction-and-selection)
   - [1a. Temporal sampling and selection](#1a-temporal-sampling-and-selection)
   - [1b. Patch, resolution, and input-layout budgeting](#1b-patch-resolution-and-input-layout-budgeting)
-- [2. Encoder Computation](#2-encoder-computation)
+- [2. Encoder computation](#2-encoder-computation)
   - [2a. Efficient encoder architectures and operators](#2a-efficient-encoder-architectures-and-operators)
   - [2b. Encoder-internal token reduction](#2b-encoder-internal-token-reduction)
   - [2c. Encoder computation reuse and substitution](#2c-encoder-computation-reuse-and-substitution)
-- [3. Encoded Representations and Connector](#3-encoded-representations-and-connector)
+- [3. Encoded representations and connector](#3-encoded-representations-and-connector)
   - [3a. Selection and merging of encoded representations](#3a-selection-and-merging-of-encoded-representations)
   - [3b. Grid pooling and downsampling](#3b-grid-pooling-and-downsampling)
   - [3c. Latent resampling and compact representation construction](#3c-latent-resampling-and-compact-representation-construction)
   - [3d. Representation-memory compression and retrieval](#3d-representation-memory-compression-and-retrieval)
-- [4. LLM Execution and State](#4-llm-execution-and-state)
+- [4. LLM execution and state](#4-llm-execution-and-state)
   - [4a. Decoder token pruning and merging](#4a-decoder-token-pruning-and-merging)
   - [4b. Sparse decoder attention](#4b-sparse-decoder-attention)
   - [4c. LLM-computed summary tokens](#4c-llm-computed-summary-tokens)
   - [4d. KV-cache compaction](#4d-kv-cache-compaction)
   - [4e. KV-cache offloading and retrieval](#4e-kv-cache-offloading-and-retrieval)
 
-## 1. Input Construction and Selection
+## 1. Input construction and selection
 
-![Stage 1](https://img.shields.io/badge/Stage_1-Input_Construction_and_Selection_%2830%29-E4FF77?style=flat-square)
+![Stage 1](https://img.shields.io/badge/Stage_1-Input_construction_and_selection_%2830%29-E4FF77?style=flat-square)
 ### 1a. Temporal sampling and selection
 
 | Method | Title | Venue | Code & Weights |
@@ -111,9 +111,9 @@ each of them, with a chip linking its rows. Bracketed numbers count papers per s
 | **LDDR** <sub>also [1a](#1a-temporal-sampling-and-selection)</sub> | [LDDR: Linear-DPP-Based Dynamic-Resolution Frame Sampling for Video MLLMs](https://arxiv.org/abs/2605.11477) | ![arXiv](https://img.shields.io/badge/arXiv-2026-b31b1b) | [![Star](https://img.shields.io/github/stars/JingfengChen-Jay/LDDR.svg?style=social&label=Star)](https://github.com/JingfengChen-Jay/LDDR) |
 | **MeToM** <sub>also [3a](#3a-selection-and-merging-of-encoded-representations), [4a](#4a-decoder-token-pruning-and-merging)</sub> | [MeToM: Metadata-Guided Token Merging for Efficient Video LLMs](https://openaccess.thecvf.com/content/CVPR2026/papers/Wu_MeToM_Metadata-Guided_Token_Merging_for_Efficient_Video_LLMs_CVPR_2026_paper.pdf) | ![venue](https://img.shields.io/badge/CVPR-2026-1f6feb) | — |
 
-## 2. Encoder Computation
+## 2. Encoder computation
 
-![Stage 2](https://img.shields.io/badge/Stage_2-Encoder_Computation_%2826%29-FF8934?style=flat-square)
+![Stage 2](https://img.shields.io/badge/Stage_2-Encoder_computation_%2826%29-FF8934?style=flat-square)
 ### 2a. Efficient encoder architectures and operators
 
 | Method | Title | Venue | Code & Weights |
@@ -158,9 +158,9 @@ each of them, with a chip linking its rows. Bracketed numbers count papers per s
 | **CoPE-VideoLM** | [CoPE-VideoLM: Leveraging Codec Primitives For Efficient Video Language Modeling](https://arxiv.org/abs/2602.13191) | ![arXiv](https://img.shields.io/badge/arXiv-2026-b31b1b) | — |
 | **STC** <sub>also [3a](#3a-selection-and-merging-of-encoded-representations)</sub> | [Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](https://arxiv.org/abs/2512.00891) | ![venue](https://img.shields.io/badge/CVPR-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/lern-to-write/STC.svg?style=social&label=Star)](https://github.com/lern-to-write/STC) |
 
-## 3. Encoded Representations and Connector
+## 3. Encoded representations and connector
 
-![Stage 3](https://img.shields.io/badge/Stage_3-Encoded_Representations_and_Connector_%2859%29-6342E8?style=flat-square)
+![Stage 3](https://img.shields.io/badge/Stage_3-Encoded_representations_and_connector_%2858%29-6342E8?style=flat-square)
 ### 3a. Selection and merging of encoded representations
 
 | Method | Title | Venue | Code & Weights |
@@ -172,7 +172,6 @@ each of them, with a chip linking its rows. Bracketed numbers count papers per s
 | **FastVID** | [FastVID: Dynamic Density Pruning for Fast Video Large Language Models](https://arxiv.org/abs/2503.11187) | ![venue](https://img.shields.io/badge/NeurIPS-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/LunarShen/FastVID.svg?style=social&label=Star)](https://github.com/LunarShen/FastVID) |
 | **FlexSelect** | [FlexSelect: Flexible Token Selection for Efficient Long Video Understanding](https://arxiv.org/abs/2506.00993) | ![venue](https://img.shields.io/badge/NeurIPS-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/yunzhuzhang0918/flexselect.svg?style=social&label=Star)](https://github.com/yunzhuzhang0918/flexselect) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/yunzhuyunzhu) |
 | **Frame-Voyager** | [Frame-Voyager: Learning to Query Frames for Video Large Language Models](https://arxiv.org/abs/2410.03226) | ![venue](https://img.shields.io/badge/ICLR-2025-1f6feb) | — |
-| **HoliTom** <sub>also [4a](#4a-decoder-token-pruning-and-merging)</sub> | [HoliTom: Holistic Token Merging for Fast Video Large Language Models](https://arxiv.org/abs/2505.21334) | ![venue](https://img.shields.io/badge/NeurIPS-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/cokeshao/HoliTom.svg?style=social&label=Star)](https://github.com/cokeshao/HoliTom) |
 | **LLaVA-PruMerge** | [LLaVA-PruMerge: Adaptive Token Reduction for Efficient Large Multimodal Models](https://arxiv.org/abs/2403.15388) | ![venue](https://img.shields.io/badge/ICCV-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/42Shawn/LLaVA-PruMerge.svg?style=social&label=Star)](https://github.com/42Shawn/LLaVA-PruMerge) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/yuzhang/llava-prumerge-plus-vicuna-7b-v1.5-lora) |
 | **LLaVA-Scissor** | [LLaVA-Scissor: Token Compression with Semantic Connected Components for Video LLMs](https://arxiv.org/abs/2506.21862) | ![arXiv](https://img.shields.io/badge/arXiv-2025-b31b1b) | [![Star](https://img.shields.io/github/stars/HumanMLLM/LLaVA-Scissor.svg?style=social&label=Star)](https://github.com/HumanMLLM/LLaVA-Scissor) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/BBBBCHAN/LLaVA-Scissor-baseline-7B) |
 | **LongVU** <sub>also [1a](#1a-temporal-sampling-and-selection), [3b](#3b-grid-pooling-and-downsampling)</sub> | [LongVU: Spatiotemporal Adaptive Compression for Long Video-Language Understanding](https://arxiv.org/abs/2410.17434) | ![venue](https://img.shields.io/badge/ICML-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/Vision-CAIR/LongVU.svg?style=social&label=Star)](https://github.com/Vision-CAIR/LongVU) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/collections/Vision-CAIR/longvu) |
@@ -247,9 +246,9 @@ each of them, with a chip linking its rows. Bracketed numbers count papers per s
 | **Flash-VStream** | [Flash-VStream: Efficient Real-Time Understanding for Long Video Streams](https://arxiv.org/abs/2506.23825) | ![venue](https://img.shields.io/badge/ICCV-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/IVGSZ/Flash-VStream.svg?style=social&label=Star)](https://github.com/IVGSZ/Flash-VStream) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/zhang9302002/Flash-VStream-Qwen-7b) |
 | **VideoLLaMB** | [VideoLLaMB: Long Streaming Video Understanding with Recurrent Memory Bridges](https://arxiv.org/abs/2409.01071) | ![venue](https://img.shields.io/badge/ICCV-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/bigai-nlco/VideoLLaMB.svg?style=social&label=Star)](https://github.com/bigai-nlco/VideoLLaMB) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/ColorfulAI/videollamb-llava-1.5-7b) |
 
-## 4. LLM Execution and State
+## 4. LLM execution and state
 
-![Stage 4](https://img.shields.io/badge/Stage_4-LLM_Execution_and_State_%2827%29-ADAAFF?style=flat-square)
+![Stage 4](https://img.shields.io/badge/Stage_4-LLM_execution_and_state_%2826%29-ADAAFF?style=flat-square)
 ### 4a. Decoder token pruning and merging
 
 | Method | Title | Venue | Code & Weights |
@@ -258,7 +257,6 @@ each of them, with a chip linking its rows. Bracketed numbers count papers per s
 | **AdaTP** | [AdaTP: Attention-Debiased Token Pruning for Video Large Language Models](https://arxiv.org/abs/2505.20100) | ![venue](https://img.shields.io/badge/EMNLP-2025-1f6feb) | — |
 | **DyToK** <sub>also [3a](#3a-selection-and-merging-of-encoded-representations), [4d](#4d-kv-cache-compaction)</sub> | [Less Is More, but Where? Dynamic Token Compression via LLM-Guided Keyframe Prior](https://arxiv.org/abs/2512.06866) | ![venue](https://img.shields.io/badge/NeurIPS-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/yu-lin-li/DyToK.svg?style=social&label=Star)](https://github.com/yu-lin-li/DyToK) |
 | **FrameFusion** | [FrameFusion: Combining Similarity and Importance for Video Token Reduction on Large Vision Language Models](https://arxiv.org/abs/2501.01986) | ![venue](https://img.shields.io/badge/ICCV-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/thu-nics/FrameFusion.svg?style=social&label=Star)](https://github.com/thu-nics/FrameFusion) |
-| **HoliTom** <sub>also [3a](#3a-selection-and-merging-of-encoded-representations)</sub> | [HoliTom: Holistic Token Merging for Fast Video Large Language Models](https://arxiv.org/abs/2505.21334) | ![venue](https://img.shields.io/badge/NeurIPS-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/cokeshao/HoliTom.svg?style=social&label=Star)](https://github.com/cokeshao/HoliTom) |
 | **PruneVid** <sub>also [3a](#3a-selection-and-merging-of-encoded-representations)</sub> | [PruneVid: Visual Token Pruning for Efficient Video Large Language Models](https://arxiv.org/abs/2412.16117) | ![venue](https://img.shields.io/badge/ACL_Findings-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/Visual-AI/PruneVid.svg?style=social&label=Star)](https://github.com/Visual-AI/PruneVid) |
 | **SparseVLM** | [SparseVLM: Visual Token Sparsification for Efficient Vision-Language Model Inference](https://arxiv.org/abs/2410.04417) | ![venue](https://img.shields.io/badge/ICML-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/Gumpest/SparseVLMs.svg?style=social&label=Star)](https://github.com/Gumpest/SparseVLMs) |
 | **STTM** | [Multi-Granular Spatio-Temporal Token Merging for Training-Free Acceleration of Video LLMs](https://arxiv.org/abs/2507.07990) | ![venue](https://img.shields.io/badge/ICCV-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/HYUNJS/STTM.svg?style=social&label=Star)](https://github.com/HYUNJS/STTM) |
