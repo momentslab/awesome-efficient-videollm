@@ -13,7 +13,7 @@ Fill in the form and a pull request is opened for you.
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/momentslab/awesome-efficient-videollm/pulls)
 [![Last Commit](https://img.shields.io/github/last-commit/momentslab/awesome-efficient-videollm?color=orange)](https://github.com/momentslab/awesome-efficient-videollm/commits/main)
-[![Papers](https://img.shields.io/badge/papers-124-informational)](#contents)
+[![Papers](https://img.shields.io/badge/papers-125-informational)](#contents)
 [![Stars](https://img.shields.io/github/stars/momentslab/awesome-efficient-videollm?style=social)](https://github.com/momentslab/awesome-efficient-videollm/stargazers)
 
 <img alt="Chronology of the listed methods, colored by the stage at which each reduces cost" src="assets/timeline.png" />
@@ -33,8 +33,8 @@ each of them, with a chip linking its rows. Bracketed numbers count papers per s
 
 [![Stage 1](https://img.shields.io/badge/1-Input_construction_and_selection_%2830%29-E4FF77?style=for-the-badge)](#1-input-construction-and-selection)
 [![Stage 2](https://img.shields.io/badge/2-Encoder_computation_%2826%29-FF8934?style=for-the-badge)](#2-encoder-computation)
-[![Stage 3](https://img.shields.io/badge/3-Encoded_representations_and_connector_%2858%29-6342E8?style=for-the-badge)](#3-encoded-representations-and-connector)
-[![Stage 4](https://img.shields.io/badge/4-LLM_execution_and_state_%2826%29-ADAAFF?style=for-the-badge)](#4-llm-execution-and-state)
+[![Stage 3](https://img.shields.io/badge/3-Encoded_representations_and_connector_%2859%29-6342E8?style=for-the-badge)](#3-encoded-representations-and-connector)
+[![Stage 4](https://img.shields.io/badge/4-LLM_execution_and_state_%2827%29-ADAAFF?style=for-the-badge)](#4-llm-execution-and-state)
 
 | Stage | What it controls | Efficiency lever |
 | :-- | :-- | :-- |
@@ -160,7 +160,7 @@ each of them, with a chip linking its rows. Bracketed numbers count papers per s
 
 ## 3. Encoded representations and connector
 
-![Stage 3](https://img.shields.io/badge/Stage_3-Encoded_representations_and_connector_%2858%29-6342E8?style=flat-square)
+![Stage 3](https://img.shields.io/badge/Stage_3-Encoded_representations_and_connector_%2859%29-6342E8?style=flat-square)
 ### 3a. Selection and merging of encoded representations
 
 | Method | Title | Venue | Code & Weights |
@@ -180,6 +180,7 @@ each of them, with a chip linking its rows. Bracketed numbers count papers per s
 | **TimeChat-Online** | [TimeChat-Online: 80% Visual Tokens are Naturally Redundant in Streaming Videos](https://arxiv.org/abs/2504.17343) | ![venue](https://img.shields.io/badge/ACM_MM-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/yaolinli/TimeChat-Online.svg?style=social&label=Star)](https://github.com/yaolinli/TimeChat-Online) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/wyccccc/TimeChatOnline-7B) |
 | **VidCom²** | [Video Compression Commander: Plug-and-Play Inference Acceleration for Video Large Language Models](https://arxiv.org/abs/2505.14454) | ![venue](https://img.shields.io/badge/EMNLP-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/xuyang-liu16/VidCom2.svg?style=social&label=Star)](https://github.com/xuyang-liu16/VidCom2) |
 | **VisionZip** | [VisionZip: Longer is Better but Not Necessary in Vision Language Models](https://arxiv.org/abs/2412.04467) | ![venue](https://img.shields.io/badge/CVPR-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/dvlab-research/VisionZip.svg?style=social&label=Star)](https://github.com/dvlab-research/VisionZip) |
+| **HoliTom** <sub>also [4a](#4a-decoder-token-pruning-and-merging)</sub> | [HoliTom: Holistic Token Merging for Fast Video Large Language Models](https://arxiv.org/abs/2505.21334) | ![venue](https://img.shields.io/badge/NeurIPS-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/cokeshao/HoliTom.svg?style=social&label=Star)](https://github.com/cokeshao/HoliTom) |
 | **DASH** | [DASH: Dynamic Audio-Driven Semantic Chunking for Efficient Omnimodal Token Compression](https://arxiv.org/abs/2603.15685) | ![venue](https://img.shields.io/badge/ECCV-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/laychou666/DASH.svg?style=social&label=Star)](https://github.com/laychou666/DASH) |
 | **DynaTok** | [DynaTok: Temporally Adaptive and Positional Bias-Aware Token Compression for Video-LLMs](https://arxiv.org/abs/2605.19322) | ![arXiv](https://img.shields.io/badge/arXiv-2026-b31b1b) | — |
 | **EarlyTom** <sub>also [2b](#2b-encoder-internal-token-reduction)</sub> | [EarlyTom: Early Token Compression Completes Fast Video Understanding](https://arxiv.org/abs/2605.30010) | ![venue](https://img.shields.io/badge/CVPR-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/viridisGreen/EarlyTom.svg?style=social&label=Star)](https://github.com/viridisGreen/EarlyTom) |
@@ -248,7 +249,7 @@ each of them, with a chip linking its rows. Bracketed numbers count papers per s
 
 ## 4. LLM execution and state
 
-![Stage 4](https://img.shields.io/badge/Stage_4-LLM_execution_and_state_%2826%29-ADAAFF?style=flat-square)
+![Stage 4](https://img.shields.io/badge/Stage_4-LLM_execution_and_state_%2827%29-ADAAFF?style=flat-square)
 ### 4a. Decoder token pruning and merging
 
 | Method | Title | Venue | Code & Weights |
@@ -261,6 +262,7 @@ each of them, with a chip linking its rows. Bracketed numbers count papers per s
 | **SparseVLM** | [SparseVLM: Visual Token Sparsification for Efficient Vision-Language Model Inference](https://arxiv.org/abs/2410.04417) | ![venue](https://img.shields.io/badge/ICML-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/Gumpest/SparseVLMs.svg?style=social&label=Star)](https://github.com/Gumpest/SparseVLMs) |
 | **STTM** | [Multi-Granular Spatio-Temporal Token Merging for Training-Free Acceleration of Video LLMs](https://arxiv.org/abs/2507.07990) | ![venue](https://img.shields.io/badge/ICCV-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/HYUNJS/STTM.svg?style=social&label=Star)](https://github.com/HYUNJS/STTM) |
 | **TimeViper** | [TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding](https://arxiv.org/abs/2511.16595) | ![arXiv](https://img.shields.io/badge/arXiv-2025-b31b1b) | [![Star](https://img.shields.io/github/stars/xiaomi-research/timeviper.svg?style=social&label=Star)](https://github.com/xiaomi-research/timeviper) |
+| **HoliTom** <sub>also [3a](#3a-selection-and-merging-of-encoded-representations)</sub> | [HoliTom: Holistic Token Merging for Fast Video Large Language Models](https://arxiv.org/abs/2505.21334) | ![venue](https://img.shields.io/badge/NeurIPS-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/cokeshao/HoliTom.svg?style=social&label=Star)](https://github.com/cokeshao/HoliTom) |
 | **FlashVID** <sub>also [3a](#3a-selection-and-merging-of-encoded-representations)</sub> | [FlashVID: Efficient Video Large Language Models via Training-free Tree-based Spatiotemporal Token Merging](https://arxiv.org/abs/2602.08024) | ![venue](https://img.shields.io/badge/ICLR-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/Fanziyang-v/FlashVID.svg?style=social&label=Star)](https://github.com/Fanziyang-v/FlashVID) |
 | **HieraVid** <sub>also [3a](#3a-selection-and-merging-of-encoded-representations)</sub> | [HieraVid: Hierarchical Token Pruning for Fast Video Large Language Models](https://arxiv.org/abs/2604.01881) | ![arXiv](https://img.shields.io/badge/arXiv-2026-b31b1b) | — |
 | **StatefulTR** | [Stateful Token Reduction for Long-Video Hybrid VLMs](https://arxiv.org/abs/2603.00198) | ![arXiv](https://img.shields.io/badge/arXiv-2026-b31b1b) | — |
