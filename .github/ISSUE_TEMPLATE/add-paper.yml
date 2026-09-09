@@ -62,27 +62,26 @@ body:
     id: section
     attributes:
       label: Where does it belong?
-      description: Pick the family whose mechanism it matches. If you are not sure, pick the closest one and we will move it.
+      description: >-
+        Pick every family whose computation the method removes. A method that reduces cost at
+        several stages (say, merges connector tokens and prunes decoder tokens) gets a row in each.
+        If you are not sure, pick the closest one and we will move it.
+      multiple: true
       options:
-        - 1. Fixed coverage sampling
-        - 1. Training-free visual summarization
-        - 1. Learned video-only selection
-        - 1. Training-free relevance / diversity
-        - 1. Learned / generative query-conditioned
-        - 2. Shared / unified multimodal encoders
-        - 2. Efficient spatiotemporal backbones
-        - 2. Linear-complexity / state-space
-        - 2. Encoder-internal token reduction
-        - 2. Compressed-domain encoding
-        - 2. Distilled / compact vision encoders
-        - 3. Training-free token pruning & merging
-        - 3. Query- / budget-based resampling
-        - 3. Spatiotemporal pooling & projection
-        - 3. Streaming / memory compression
-        - 3. Audio & audiovisual token compression
-        - 4. Decoder-layer pruning & sparse prefill
-        - 4. Visual KV-cache compression
-        - 4. Streaming / bounded-memory KV
+        - "1a. Temporal sampling and selection"
+        - "1b. Patch, resolution, and input-layout budgeting"
+        - "2a. Efficient encoder architectures and operators"
+        - "2b. Encoder-internal token reduction"
+        - "2c. Encoder computation reuse and substitution"
+        - "3a. Selection and merging of encoded representations"
+        - "3b. Grid pooling and downsampling"
+        - "3c. Latent resampling and compact representation construction"
+        - "3d. Representation-memory compression and retrieval"
+        - "4a. Decoder token pruning and merging"
+        - "4b. Sparse decoder attention"
+        - "4c. LLM-computed summary tokens"
+        - "4d. KV-cache compaction"
+        - "4e. KV-cache offloading and retrieval"
     validations:
       required: true
   - type: textarea

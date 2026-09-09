@@ -1,18 +1,20 @@
 #!/usr/bin/env python3
 """Turn an "Add a paper" issue-form submission into a README row.
 
-Reads the issue body from $ISSUE_BODY. If the paper already exists, reports
-its category without changing README; otherwise inserts a year-sorted row and
-normalizes the file. The body is untrusted input, so every field is sanitized
+Reads the issue body from $ISSUE_BODY. The form lets a submitter pick several
+families (a method that reduces cost at several stages appears in each). A
+paper already listed under every requested family is reported as a duplicate;
+otherwise a year-sorted row is inserted into each family that lacks it and the
+file is normalized. The body is untrusted input, so every field is sanitized
 and every link must be a plain https URL.
 
     ISSUE_BODY="$(gh issue view N --json body -q .body)" python3 scripts/issue_to_row.py
     python3 scripts/issue_to_row.py --self-test
 """
 import os, re, sys, unicodedata
-from urllib.parse import urlsplit
 
 import normalize_readme as N
+from normalize_readme import paper_key
 
 FIELDS = {"abbreviation": "abbrev", "paper title": "title", "paper link": "paper",
           "venue": "venue", "year": "year", "code link": "code",
@@ -48,19 +50,25 @@ def url(value, field):
     return value
 
 
-def paper_key(value):
-    """Stable paper identity: versionless arXiv ID, DOI, or exact URL."""
-    parts = urlsplit(value.strip())
-    host = (parts.hostname or "").lower().removeprefix("www.")
-    path = parts.path.rstrip("/")
-    if host == "arxiv.org":
-        m = re.fullmatch(r"/(?:abs|pdf|html)/(\d{4}\.\d{4,5})(?:v\d+)?(?:\.pdf)?",
-                         path, re.I)
-        if m:
-            return "arxiv:" + m.group(1)
-    if host in {"doi.org", "dx.doi.org"}:
-        return "doi:" + path.lstrip("/").casefold()
-    return host + path + (("?" + parts.query) if parts.query else "")
+def families(text):
+    """Family id -> title, from the README's `### Na. Title` headings."""
+    return dict(m.groups() for l in text.splitlines() if (m := N.FAMILY.match(l)))
+
+
+def requested(value, known):
+    """Selected families of a multi-select dropdown -> family ids, in form order.
+
+    GitHub renders the selection as one comma-separated line, and family titles
+    contain commas, so the `Na.` prefixes are the only reliable delimiters."""
+    ids = []
+    for i in re.findall(r"\b(\d[a-e])\.", value):
+        if i not in known:
+            sys.exit(f"error: unknown family {i!r}; pick one of {', '.join(known)}")
+        if i not in ids:
+            ids.append(i)
+    if not ids:
+        sys.exit(f"error: could not read a family from: {value[:80]!r}")
+    return ids
 
 
 def title_key(value):
@@ -68,18 +76,16 @@ def title_key(value):
     return " ".join("".join(c if c.isalnum() else " " for c in value).split())
 
 
-def find_duplicate(text, fields):
-    """Return the existing method and real category for the same paper."""
+def find_existing(text, fields):
+    """Return (method, [family ids]) of the rows already listing the same paper."""
     wanted_url, wanted_title = paper_key(fields["paper"]), title_key(fields["title"])
-    stage = section = ""
+    family, method, ids = None, None, []
     for line in text.splitlines():
-        if m := re.match(r"^## (\d+)\. ", line):
-            stage, section = m.group(1), ""
-        elif line.startswith("## "):
-            stage = section = ""
-        elif line.startswith("### "):
-            section = line[4:].strip()
-        elif stage and section and line.startswith("| **"):
+        if line.startswith("## "):
+            family = None
+        elif m := N.FAMILY.match(line):
+            family = m.group(1)
+        elif family and line.startswith("| **"):
             cells = [c.strip() for c in line.strip().strip("|").split("|")]
             if len(cells) not in (4, 6):
                 continue
@@ -88,7 +94,9 @@ def find_duplicate(text, fields):
                 link = N.LINK.search(cells[4])
             if link and (paper_key(link.group(2)) == wanted_url or
                          wanted_title and title_key(link.group(1)) == wanted_title):
-                return cells[0].replace("**", "").strip(), f"{stage}. {section}"
+                method = method or N.ALSO.sub("", cells[0]).replace("**", "").strip()
+                ids.append(family)
+    return (method, ids) if ids else None
 
 
 def build_row(f):
@@ -107,14 +115,13 @@ def row_year(line):
     return int(m.group(1)) if m else 0
 
 
-def insert(text, section, row):
-    """Place the row in its subsection's table, keeping rows sorted by year."""
-    heading = "### " + section.split(". ", 1)[1]
+def insert(text, family, row):
+    """Place the row in the family's table, keeping rows sorted by year."""
     lines = text.split("\n")
-    try:
-        start = lines.index(heading)
-    except ValueError:
-        sys.exit(f"error: no such subsection: {heading!r}")
+    start = next((i for i, l in enumerate(lines)
+                  if (m := N.FAMILY.match(l)) and m.group(1) == family), None)
+    if start is None:
+        sys.exit(f"error: no such family: {family!r}")
     table = next(i for i, l in enumerate(lines[start:], start) if l.startswith("| ---"))
     end = next(i for i, l in enumerate(lines[table + 1:], table + 1) if not l.startswith("| "))
     year = int(clean(row.split("|")[3], 4))
@@ -127,27 +134,33 @@ def self_test():
             "### Paper link\n\nhttps://example.org/papers/zzprobe\n\n### Venue\n\nECCV 2024\n\n"
             "### Year\n\n2024\n\n### Code link\n\nhttps://github.com/o/r\n\n"
             "### Weights link\n\n_No response_\n\n"
-            "### Where does it belong?\n\n1. Fixed coverage sampling\n")
+            "### Where does it belong?\n\n1a. Temporal sampling and selection, "
+            "1b. Patch, resolution, and input-layout budgeting\n")
     f = parse(body)
     assert f["abbrev"] == "ZZProbe" and "weights" not in f, f
+    readme = open("README.md").read()
+    known = families(readme)
+    assert requested(f["section"], known) == ["1a", "1b"], requested(f["section"], known)
     row = build_row(f)
     assert row.count("|") == 7 and "[code](https://github.com/o/r)" in row, row
-    new = N.normalize(insert(open("README.md").read(), f["section"], row))
-    assert new.count("**ZZProbe**") == 1 and N.normalize(new) == new, "insert not stable"
+    new = readme
+    for fam in requested(f["section"], known):
+        new = insert(new, fam, row)
+    new = N.normalize(new)
+    assert new.count("**ZZProbe**") == 2 and N.normalize(new) == new, "insert not stable"
     assert "github/stars/o/r" in new, "code link did not become a star badge"
-    readme = open("README.md").read()
-    duplicate = find_duplicate(readme, {
+    assert "**ZZProbe** <sub>also [1b]" in new and "**ZZProbe** <sub>also [1a]" in new, \
+           "cross-family chips not derived"
+    assert find_existing(new, f) == ("ZZProbe", ["1a", "1b"]), find_existing(new, f)
+    existing = find_existing(readme, {
         "paper": "https://arxiv.org/pdf/2403.06764v9.pdf", "title": "different title"})
-    assert duplicate == ("FastV", "4. Decoder-layer pruning & sparse prefill"), duplicate
-    assert paper_key("https://arxiv.org/html/2403.06764v2") == "arxiv:2403.06764"
-    assert paper_key("https://dx.doi.org/10.1007/ABC/?from=issue") == \
-           paper_key("https://doi.org/10.1007/abc")
-    duplicate = find_duplicate(readme, {
+    assert existing == ("FastV", ["4a"]), existing
+    existing = find_existing(readme, {
         "paper": "https://example.org/fastv",
         "title": "AN IMAGE IS WORTH 1/2 TOKENS AFTER LAYER 2 — PLUG-AND-PLAY INFERENCE "
                  "ACCELERATION FOR LARGE VISION-LANGUAGE MODELS"})
-    assert duplicate == ("FastV", "4. Decoder-layer pruning & sparse prefill"), duplicate
-    assert find_duplicate(readme, f) is None, "unrelated paper reported as duplicate"
+    assert existing == ("FastV", ["4a"]), existing
+    assert find_existing(readme, f) is None, "unrelated paper reported as listed"
     assert url("http://arxiv.org/abs/2504.17343", "paper link") == \
            "https://arxiv.org/abs/2504.17343", "http link not upgraded"
     evil = parse("### Abbreviation\n\na | b `x` [y](z)\n\n### Paper link\n\njavascript:alert(1)\n")
@@ -170,11 +183,18 @@ if __name__ == "__main__":
         sys.exit(f"error: issue is missing required fields: {', '.join(missing)}")
     fields["paper"] = url(fields["paper"], "paper link")
     readme = open("README.md").read()
-    if duplicate := find_duplicate(readme, fields):
-        method, section = duplicate
-        print(f"Thanks. This paper is already listed as **{method}** under **{section}**, "
-              "so I am closing this request.")
+    known = families(readme)
+    wanted = requested(fields["section"], known)
+    method, listed = find_existing(readme, fields) or (clean(fields["abbrev"], 60), [])
+    missing = [f for f in wanted if f not in listed]
+    if listed and not missing:
+        print(f"Thanks. This paper is already listed as **{method}** under "
+              f"**{', '.join(listed)}**, so I am closing this request.")
         sys.exit(DUPLICATE)
-    readme = insert(readme, fields["section"], build_row(fields))
+    row = build_row(fields)
+    for fam in missing:
+        readme = insert(readme, fam, row)
     open("README.md", "w").write(N.normalize(readme))
-    print(f"Added **{clean(fields['abbrev'], 60)}** to _{clean(fields['section'], 80)}_.")
+    added = ", ".join(f"_{f}. {known[f]}_" for f in missing)
+    note = f" It was already listed under {', '.join(listed)}." if listed else ""
+    print(f"Added **{clean(fields['abbrev'], 60)}** to {added}.{note}")
