@@ -13,7 +13,7 @@ Fill in the form and a pull request is opened for you.
 [![arXiv](https://img.shields.io/badge/arXiv-2609.10355-b31b1b.svg)](https://arxiv.org/abs/2609.10355)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/momentslab/awesome-efficient-videollm/pulls)
 [![Last Commit](https://img.shields.io/github/last-commit/momentslab/awesome-efficient-videollm?color=orange)](https://github.com/momentslab/awesome-efficient-videollm/commits/main)
-[![Papers](https://img.shields.io/badge/papers-125-informational)](#contents)
+[![Papers](https://img.shields.io/badge/papers-126-informational)](#contents)
 [![Stars](https://img.shields.io/github/stars/momentslab/awesome-efficient-videollm?style=social)](https://github.com/momentslab/awesome-efficient-videollm/stargazers)
 
 <img alt="Chronology of the listed methods, colored by the stage at which each reduces cost" src="assets/timeline.png" />
@@ -32,7 +32,7 @@ The four sections follow the encoder–connector–LLM pipeline. A method belong
 whose computation it removes, and a method that reduces cost at several stages is listed under
 each of them, with a chip linking its rows. Bracketed numbers count papers per stage.
 
-[![Stage 1](https://img.shields.io/badge/1-Input_construction_and_selection_%2830%29-E4FF77?style=for-the-badge)](#1-input-construction-and-selection)
+[![Stage 1](https://img.shields.io/badge/1-Input_construction_and_selection_%2831%29-E4FF77?style=for-the-badge)](#1-input-construction-and-selection)
 [![Stage 2](https://img.shields.io/badge/2-Encoder_computation_%2826%29-FF8934?style=for-the-badge)](#2-encoder-computation)
 [![Stage 3](https://img.shields.io/badge/3-Encoded_representations_and_connector_%2859%29-6342E8?style=for-the-badge)](#3-encoded-representations-and-connector)
 [![Stage 4](https://img.shields.io/badge/4-LLM_execution_and_state_%2827%29-ADAAFF?style=for-the-badge)](#4-llm-execution-and-state)
@@ -67,7 +67,7 @@ each of them, with a chip linking its rows. Bracketed numbers count papers per s
 
 ## 1. Input construction and selection
 
-![Stage 1](https://img.shields.io/badge/Stage_1-Input_construction_and_selection_%2830%29-E4FF77?style=flat-square)
+![Stage 1](https://img.shields.io/badge/Stage_1-Input_construction_and_selection_%2831%29-E4FF77?style=flat-square)
 ### 1a. Temporal sampling and selection
 
 | Method | Title | Venue | Code & Weights |
@@ -86,6 +86,7 @@ each of them, with a chip linking its rows. Bracketed numbers count papers per s
 | **Q-Frame** <sub>also [1b](#1b-patch-resolution-and-input-layout-budgeting)</sub> | [Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs](https://arxiv.org/abs/2506.22139) | ![venue](https://img.shields.io/badge/ICCV-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/xiaomi-research/q-frame.svg?style=social&label=Star)](https://github.com/xiaomi-research/q-frame) |
 | **T*** | [T*: Re-thinking Temporal Search for Long-Form Video Understanding](https://arxiv.org/abs/2504.02259) | ![venue](https://img.shields.io/badge/CVPR-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/mll-lab-nu/TStar.svg?style=social&label=Star)](https://github.com/mll-lab-nu/TStar) |
 | **ViaRL** | [ViaRL: Adaptive Temporal Grounding via Visual Iterated Amplification Reinforcement Learning](https://arxiv.org/abs/2505.15447) | ![arXiv](https://img.shields.io/badge/arXiv-2025-b31b1b) | — |
+| **MDP3** | [MDP3: A Training-free Approach for List-wise Frame Selection in Video-LLMs](https://arxiv.org/abs/2501.02885) | ![venue](https://img.shields.io/badge/ICCV-2025-1f6feb) | [![Star](https://img.shields.io/github/stars/sunh-23/MDP3.svg?style=social&label=Star)](https://github.com/sunh-23/MDP3) |
 | **EFS** | [Event-Anchored Frame Selection for Effective Long-Video Understanding](https://arxiv.org/abs/2603.00983) | ![arXiv](https://img.shields.io/badge/arXiv-2026-b31b1b) | — |
 | **FOCUS** | [FOCUS: Efficient Keyframe Selection for Long Video Understanding](https://arxiv.org/abs/2510.27280) | ![venue](https://img.shields.io/badge/ICLR-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/NUS-HPC-AI-Lab/FOCUS.svg?style=social&label=Star)](https://github.com/NUS-HPC-AI-Lab/FOCUS) |
 | **GIFT** | [GIFT: Global Irreplaceability Frame Targeting for Efficient Video Understanding](https://arxiv.org/abs/2603.25072) | ![venue](https://img.shields.io/badge/CVPR-2026-1f6feb) | — |
