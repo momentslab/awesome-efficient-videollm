@@ -13,7 +13,7 @@ Fill in the form and a pull request is opened for you.
 [![arXiv](https://img.shields.io/badge/arXiv-2609.10355-b31b1b.svg)](https://arxiv.org/abs/2609.10355)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/momentslab/awesome-efficient-videollm/pulls)
 [![Last Commit](https://img.shields.io/github/last-commit/momentslab/awesome-efficient-videollm?color=orange)](https://github.com/momentslab/awesome-efficient-videollm/commits/main)
-[![Papers](https://img.shields.io/badge/papers-126-informational)](#contents)
+[![Papers](https://img.shields.io/badge/papers-127-informational)](#contents)
 [![Stars](https://img.shields.io/github/stars/momentslab/awesome-efficient-videollm?style=social)](https://github.com/momentslab/awesome-efficient-videollm/stargazers)
 
 <img alt="Chronology of the listed methods, colored by the stage at which each reduces cost" src="assets/timeline.png" />
@@ -32,7 +32,7 @@ The four sections follow the encoder–connector–LLM pipeline. A method belong
 whose computation it removes, and a method that reduces cost at several stages is listed under
 each of them, with a chip linking its rows. Bracketed numbers count papers per stage.
 
-[![Stage 1](https://img.shields.io/badge/1-Input_construction_and_selection_%2831%29-E4FF77?style=for-the-badge)](#1-input-construction-and-selection)
+[![Stage 1](https://img.shields.io/badge/1-Input_construction_and_selection_%2832%29-E4FF77?style=for-the-badge)](#1-input-construction-and-selection)
 [![Stage 2](https://img.shields.io/badge/2-Encoder_computation_%2826%29-FF8934?style=for-the-badge)](#2-encoder-computation)
 [![Stage 3](https://img.shields.io/badge/3-Encoded_representations_and_connector_%2859%29-6342E8?style=for-the-badge)](#3-encoded-representations-and-connector)
 [![Stage 4](https://img.shields.io/badge/4-LLM_execution_and_state_%2827%29-ADAAFF?style=for-the-badge)](#4-llm-execution-and-state)
@@ -67,7 +67,7 @@ each of them, with a chip linking its rows. Bracketed numbers count papers per s
 
 ## 1. Input construction and selection
 
-![Stage 1](https://img.shields.io/badge/Stage_1-Input_construction_and_selection_%2831%29-E4FF77?style=flat-square)
+![Stage 1](https://img.shields.io/badge/Stage_1-Input_construction_and_selection_%2832%29-E4FF77?style=flat-square)
 ### 1a. Temporal sampling and selection
 
 | Method | Title | Venue | Code & Weights |
@@ -100,6 +100,7 @@ each of them, with a chip linking its rows. Bracketed numbers count papers per s
 | **ReFoCUS** | [ReFoCUS: Reinforcement-guided Frame Optimization for Contextual Understanding](https://arxiv.org/abs/2506.01274) | ![venue](https://img.shields.io/badge/CVPR-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/interlive-team/ReFoCUS.svg?style=social&label=Star)](https://github.com/interlive-team/ReFoCUS) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/interlive) |
 | **TSPO** | [TSPO: Temporal Sampling Policy Optimization for Long-form Video Language Understanding](https://arxiv.org/abs/2508.04369) | ![venue](https://img.shields.io/badge/AAAI-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/Hui-design/TSPO.svg?style=social&label=Star)](https://github.com/Hui-design/TSPO) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/hzf666/TSPO-0.4B) |
 | **VideoITG** | [VideoITG: Multimodal Video Understanding with Instructed Temporal Grounding](https://arxiv.org/abs/2507.13353) | ![venue](https://img.shields.io/badge/CVPR-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/NVlabs/VideoITG.svg?style=social&label=Star)](https://github.com/NVlabs/VideoITG) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/nvidia/VideoITG-8B) |
+| **DAFS** | [Efficient Frame Selection for Long Videos at Test Time with Attention-Based MLLM Selectors](https://arxiv.org/abs/2607.15689) | ![arXiv](https://img.shields.io/badge/arXiv-2026-b31b1b) | — |
 
 ### 1b. Patch, resolution, and input-layout budgeting
 
