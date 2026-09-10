@@ -13,7 +13,7 @@ Fill in the form and a pull request is opened for you.
 [![arXiv](https://img.shields.io/badge/arXiv-2609.10355-b31b1b.svg)](https://arxiv.org/abs/2609.10355)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/momentslab/awesome-efficient-videollm/pulls)
 [![Last Commit](https://img.shields.io/github/last-commit/momentslab/awesome-efficient-videollm?color=orange)](https://github.com/momentslab/awesome-efficient-videollm/commits/main)
-[![Papers](https://img.shields.io/badge/papers-127-informational)](#contents)
+[![Papers](https://img.shields.io/badge/papers-128-informational)](#contents)
 [![Stars](https://img.shields.io/github/stars/momentslab/awesome-efficient-videollm?style=social)](https://github.com/momentslab/awesome-efficient-videollm/stargazers)
 
 <img alt="Chronology of the listed methods, colored by the stage at which each reduces cost" src="assets/timeline.png" />
@@ -34,7 +34,7 @@ each of them, with a chip linking its rows. Bracketed numbers count papers per s
 
 [![Stage 1](https://img.shields.io/badge/1-Input_construction_and_selection_%2832%29-E4FF77?style=for-the-badge)](#1-input-construction-and-selection)
 [![Stage 2](https://img.shields.io/badge/2-Encoder_computation_%2826%29-FF8934?style=for-the-badge)](#2-encoder-computation)
-[![Stage 3](https://img.shields.io/badge/3-Encoded_representations_and_connector_%2859%29-6342E8?style=for-the-badge)](#3-encoded-representations-and-connector)
+[![Stage 3](https://img.shields.io/badge/3-Encoded_representations_and_connector_%2860%29-6342E8?style=for-the-badge)](#3-encoded-representations-and-connector)
 [![Stage 4](https://img.shields.io/badge/4-LLM_execution_and_state_%2827%29-ADAAFF?style=for-the-badge)](#4-llm-execution-and-state)
 
 | Stage | What it controls | Efficiency lever |
@@ -163,7 +163,7 @@ each of them, with a chip linking its rows. Bracketed numbers count papers per s
 
 ## 3. Encoded representations and connector
 
-![Stage 3](https://img.shields.io/badge/Stage_3-Encoded_representations_and_connector_%2859%29-6342E8?style=flat-square)
+![Stage 3](https://img.shields.io/badge/Stage_3-Encoded_representations_and_connector_%2860%29-6342E8?style=flat-square)
 ### 3a. Selection and merging of encoded representations
 
 | Method | Title | Venue | Code & Weights |
@@ -200,6 +200,7 @@ each of them, with a chip linking its rows. Bracketed numbers count papers per s
 | **STC** <sub>also [2c](#2c-encoder-computation-reuse-and-substitution)</sub> | [Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](https://arxiv.org/abs/2512.00891) | ![venue](https://img.shields.io/badge/CVPR-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/lern-to-write/STC.svg?style=social&label=Star)](https://github.com/lern-to-write/STC) |
 | **StreamingTOM** <sub>also [4d](#4d-kv-cache-compaction), [4e](#4e-kv-cache-offloading-and-retrieval)</sub> | [StreamingTOM: Streaming Token Compression for Efficient Video Understanding](https://arxiv.org/abs/2510.18269) | ![venue](https://img.shields.io/badge/CVPR-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/YIGE24/StreamingTOM.svg?style=social&label=Star)](https://github.com/YIGE24/StreamingTOM) |
 | **VideoChat-Flash** <sub>also [4a](#4a-decoder-token-pruning-and-merging)</sub> | [VideoChat-Flash: Hierarchical Compression for Long-Context Video Modeling](https://arxiv.org/abs/2501.00574) | ![venue](https://img.shields.io/badge/ICLR-2026-1f6feb) | [![Star](https://img.shields.io/github/stars/OpenGVLab/VideoChat-Flash.svg?style=social&label=Star)](https://github.com/OpenGVLab/VideoChat-Flash) [![Weights](https://img.shields.io/badge/%F0%9F%A4%97_Weights-FFD21E)](https://huggingface.co/collections/OpenGVLab/videochat-flash) |
+| **AdaptToken** | [AdaptToken: Entropy-based Adaptive Token Selection for MLLM Long Video Understanding](https://arxiv.org/abs/2603.28696) | ![arXiv](https://img.shields.io/badge/arXiv-2026-b31b1b) | [![Star](https://img.shields.io/github/stars/HaozheQi/AdaptToken.svg?style=social&label=Star)](https://github.com/HaozheQi/AdaptToken) |
 
 ### 3b. Grid pooling and downsampling
 
