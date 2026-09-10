@@ -1,0 +1,97 @@
+name: Paper request
+
+on:
+  issues:
+    # reopened/edited are the retry gestures: a submission that failed its
+    # checks is fixed by editing it, or re-run by closing and reopening.
+    types: [opened, reopened, edited]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  open-pr:
+    if: contains(github.event.issue.labels.*.name, 'add-paper')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: python3 scripts/issue_to_row.py --self-test
+      - name: Skip if a pull request is already open for this issue
+        id: guard
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.issue.number }}
+        run: |
+          open=$(gh pr list --head "paper/issue-$NUMBER" --state open --json number --jq 'length')
+          echo "exists=$open" >> "$GITHUB_OUTPUT"
+          # A stale PR is not this workflow's problem: refresh-paper-prs.yml
+          # rebuilds it from the current issue body on issues.edited.
+          [ "$open" = "0" ] || echo "PR for #$NUMBER already open; edits are handled by Refresh open paper PRs"
+      - name: Check for a duplicate or add the row
+        if: steps.guard.outputs.exists == '0'
+        id: add
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}   # untrusted: passed as env, never inlined
+        run: |
+          # Exit code carries the verdict: 0 added, 3 already listed, other = broken
+          # submission. Never infer "duplicate" from an unchanged README -- a failing
+          # script leaves it unchanged too, and that silently closed #74 as a duplicate.
+          set +e
+          summary=$(python3 scripts/issue_to_row.py 2>&1)
+          code=$?
+          set -e
+          echo "$summary"
+          {
+            echo "verdict=$code"
+            echo "summary<<EOF_SUMMARY"
+            echo "$summary"
+            echo "EOF_SUMMARY"
+          } >> "$GITHUB_OUTPUT"
+          [ "$code" -eq 0 ] || [ "$code" -eq 3 ]
+      - name: Open the pull request or close a duplicate
+        if: steps.guard.outputs.exists == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.issue.number }}
+          TITLE: ${{ github.event.issue.title }}
+          SUMMARY: ${{ steps.add.outputs.summary }}
+          VERDICT: ${{ steps.add.outputs.verdict }}
+          AUTHOR_LOGIN: ${{ github.event.issue.user.login }}
+          AUTHOR_ID: ${{ github.event.issue.user.id }}
+        run: |
+          if [ "$VERDICT" = "3" ]; then
+            gh issue close "$NUMBER" --reason duplicate --comment "$SUMMARY"
+            exit 0
+          fi
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git checkout -b "paper/issue-$NUMBER"
+          git commit -am "docs: add paper requested in #$NUMBER" \
+            -m "Co-authored-by: $AUTHOR_LOGIN <$AUTHOR_ID+$AUTHOR_LOGIN@users.noreply.github.com>"
+          git push -u origin "paper/issue-$NUMBER"
+          gh pr create --title "$TITLE" \
+            --body "$SUMMARY"$'\n\n'"Opened automatically from #$NUMBER. Closes #$NUMBER."
+          gh issue comment "$NUMBER" --body "Thanks. A pull request with this row is open, so there is nothing else to do from your side."
+
+      - name: Report a broken submission on the issue
+        if: failure() && steps.add.conclusion == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.issue.number }}
+          SUMMARY: ${{ steps.add.outputs.summary }}
+        run: |
+          {
+            echo "Thanks for the submission. It could not be added automatically:"
+            echo
+            echo '```'
+            echo "${SUMMARY:-the row builder failed, see the workflow run for details}"
+            echo '```'
+            echo
+            echo "Edit this issue to correct it and the check runs again automatically."
+          } > comment.md
+          gh issue comment "$NUMBER" --body-file comment.md

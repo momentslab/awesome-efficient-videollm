@@ -1,0 +1,88 @@
+name: Add a paper
+description: Suggest a method for the list. We take care of the formatting.
+title: "[Paper] "
+labels: [add-paper]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing. Submitting this opens a pull request for you, so there is
+        no need to fork the repo, edit markdown, or run anything.
+  - type: input
+    id: abbrev
+    attributes:
+      label: Abbreviation
+      description: Short name the method is known by.
+      placeholder: FastV
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Paper title
+      placeholder: An Image is Worth 1/2 Tokens After Layer 2
+    validations:
+      required: true
+  - type: input
+    id: paper
+    attributes:
+      label: Paper link
+      description: arXiv `abs` page preferred.
+      placeholder: https://arxiv.org/abs/2403.06764
+    validations:
+      required: true
+  - type: input
+    id: venue
+    attributes:
+      label: Venue
+      description: Conference or journal, or `arXiv` for a preprint.
+      placeholder: ECCV 2024
+    validations:
+      required: true
+  - type: input
+    id: year
+    attributes:
+      label: Year
+      placeholder: "2024"
+    validations:
+      required: true
+  - type: input
+    id: code
+    attributes:
+      label: Code link
+      description: Official repository, if there is one.
+      placeholder: https://github.com/pkunlp-icler/FastV
+  - type: input
+    id: weights
+    attributes:
+      label: Weights link
+      description: Hugging Face collection, Drive folder, or release page, if there is one.
+      placeholder: https://huggingface.co/collections/...
+  - type: checkboxes
+    id: section
+    attributes:
+      label: Where does it belong?
+      description: >-
+        Tick every family whose computation the method removes. A method that reduces cost at
+        several stages (say, merges connector tokens and prunes decoder tokens) gets a row in each.
+        If you are not sure, tick the closest one and we will move it.
+      options:
+        - label: "1a. Temporal sampling and selection"
+        - label: "1b. Patch, resolution, and input-layout budgeting"
+        - label: "2a. Efficient encoder architectures and operators"
+        - label: "2b. Encoder-internal token reduction"
+        - label: "2c. Encoder computation reuse and substitution"
+        - label: "3a. Selection and merging of encoded representations"
+        - label: "3b. Grid pooling and downsampling"
+        - label: "3c. Latent resampling and compact representation construction"
+        - label: "3d. Representation-memory compression and retrieval"
+        - label: "4a. Decoder token pruning and merging"
+        - label: "4b. Sparse decoder attention"
+        - label: "4c. LLM-computed summary tokens"
+        - label: "4d. KV-cache compaction"
+        - label: "4e. KV-cache offloading and retrieval"
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else?
+      description: Optional. Why it belongs here, or anything we should know.

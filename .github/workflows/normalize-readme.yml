@@ -1,0 +1,28 @@
+name: Normalize README
+
+on:
+  push:
+    branches: [main]
+    paths: ['README.md', 'scripts/normalize_readme.py']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: python3 scripts/normalize_readme.py --self-test
+      - name: Normalize tables, chips, contents and counts
+        run: |
+          python3 scripts/normalize_readme.py
+          git diff --quiet README.md && { echo "already normalized"; exit 0; }
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git commit -am 'chore: normalize README (badges, contents, paper counts)'
+          git push

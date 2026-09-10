@@ -1,0 +1,99 @@
+name: Refresh open paper PRs
+
+# Every paper row is a pure function of (README on main, issue body), and
+# issue_to_row.py normalizes, so any two parallel PRs collide on the
+# paper-count badge. Rather than merge stale diffs, rebuild each open PR's
+# branch by re-running the row builder against the current issue body.
+#
+# Two things make a PR stale, so both trigger a rebuild:
+#   push  -- main moved, every open PR is now based on an older README
+#   issues.edited -- a submission was corrected, and paper-request.yml skips
+#                    issues that already have a PR, so it cannot do this
+on:
+  push:
+    branches: [main]
+  issues:
+    types: [edited]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: paper-rows
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: python3 scripts/issue_to_row.py --self-test
+      - name: Rebuild each open paper branch on top of main
+        env:
+          GH_TOKEN: ${{ github.token }}
+          # An issues.edited run repairs only that issue's PR; a push repairs all.
+          ONLY: ${{ github.event.issue.number }}
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          branches=$(gh pr list --state open --json headRefName --jq \
+            '.[].headRefName | select(startswith("paper/issue-"))')
+          if [ -n "$ONLY" ]; then
+            branches=$(echo "$branches" | grep -x "paper/issue-$ONLY" || true)
+            [ -n "$branches" ] || { echo "#$ONLY has no open paper PR, nothing to rebuild"; exit 0; }
+          fi
+          for br in $branches; do
+            n=${br#paper/issue-}
+            echo "::group::#$n ($br)"
+            git checkout -q -B "$br" origin/main
+            login=$(gh issue view "$n" --json author --jq .author.login)
+            uid=$(gh api "/users/$login" --jq .id)
+            if ! out=$(ISSUE_BODY=$(gh issue view "$n" --json body --jq .body) \
+                       python3 scripts/issue_to_row.py 2>&1); then
+              echo "$out"
+              echo "script failed for #$n, leaving the PR alone"
+              # Only say so when the edit itself caused this, or every unrelated
+              # push would re-comment the same error on the same issue.
+              if [ -n "$ONLY" ]; then
+                {
+                  echo "That edit could not be applied:"
+                  echo
+                  echo '```'
+                  echo "$out"
+                  echo '```'
+                  echo
+                  echo "The pull request still has the previous version. Edit again to retry."
+                } > comment.md
+                gh issue comment "$n" --body-file comment.md
+              fi
+              echo "::endgroup::"; continue
+            fi
+            echo "$out"
+            if git diff --quiet README.md; then
+              gh pr close "$br" --comment "This paper is already listed on \`main\`, so this pull request is redundant."
+              gh issue close "$n" --reason completed --comment "This paper is now listed on \`main\`. Thanks."
+              echo "closed #$n and its PR: already listed on main"
+              echo "::endgroup::"; continue
+            fi
+            # Skip the push when the rebuilt row is byte-identical to what the
+            # branch already has, so an unrelated push to main does not churn
+            # every open PR with a no-op commit.
+            if git fetch -q origin "$br" &&
+               git show FETCH_HEAD:README.md | diff -q - README.md >/dev/null 2>&1; then
+              echo "already up to date, not pushing"
+              echo "::endgroup::"; continue
+            fi
+            git commit -qam "docs: add paper requested in #$n" \
+              -m "Co-authored-by: $login <$uid+$login@users.noreply.github.com>"
+            git push -qf origin "$br"
+            echo "rebuilt and force-pushed $br"
+            echo "::endgroup::"
+          done
